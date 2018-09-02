@@ -31,7 +31,7 @@ public class RestExceptionMapper implements ExceptionMapper<Exception> {
 		}else if(exception  instanceof CtripException){
 			CtripException cp = (CtripException)exception;
 			String response = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
-					"<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">" +
+					"<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">" +
 					"<soap:Body>" +
 					"<"+cp.getCategory()+" xmlns=\"http://www.opentravel.org/OTA/2003/05\" EchoToken=\"" + cp.getEchoToken() + "\" PrimaryLangId=\"en-us\" TimeStamp=\"" + new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").format(new Date()) + ".0Z\">" +
 					"<Errors>" +
@@ -40,7 +40,7 @@ public class RestExceptionMapper implements ExceptionMapper<Exception> {
 					"</"+cp.getCategory()+">" +
 					"</soap:Body>" +
 					"</soap:Envelope>";
-			logger.fatal("Catch Ctrip Exception = " + exception+" | Line = "+exception.getStackTrace()[0].getLineNumber()+" | Method = "+exception.getStackTrace()[0].getMethodName()+" | Class = "+exception.getStackTrace()[0].getClassName(),exception);
+			logger.error("Catch Ctrip Exception = " + exception+" | Line = "+exception.getStackTrace()[0].getLineNumber()+" | Method = "+exception.getStackTrace()[0].getMethodName()+" | Class = "+exception.getStackTrace()[0].getClassName(),exception);
 			return Response.status(Status.OK).entity(response).build();
 		}
 		logger.fatal("Catch Exception = " + exception+" | Line = "+exception.getStackTrace()[0].getLineNumber()+" | Method = "+exception.getStackTrace()[0].getMethodName()+" | Class = "+exception.getStackTrace()[0].getClassName(),exception);

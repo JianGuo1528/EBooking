@@ -201,12 +201,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
     "pos",
     "hotelAvailRequests"
 })
-@XmlRootElement(name = "OTA_HotelAvailGetRQ")
+@XmlRootElement(name = "OTA_HotelAvailGetRQ", namespace = "http://www.opentravel.org/OTA/2003/05")
 public class OTAHotelAvailGetRQ {
 
-    @XmlElement(name = "POS", required = true)
+    @XmlElement(name = "POS", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
     protected OTAHotelAvailGetRQ.POS pos;
-    @XmlElement(name = "HotelAvailRequests", required = true)
+    @XmlElement(name = "HotelAvailRequests", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
     protected OTAHotelAvailGetRQ.HotelAvailRequests hotelAvailRequests;
     @XmlAttribute(name = "EchoToken")
     protected String echoToken;
@@ -216,7 +216,7 @@ public class OTAHotelAvailGetRQ {
     @XmlAttribute(name = "PrimaryLangID")
     protected String primaryLangID;
     @XmlAttribute(name = "Version")
-    protected Byte version;
+    protected Double version;
 
     /**
      * Gets the value of the pos property.
@@ -346,7 +346,7 @@ public class OTAHotelAvailGetRQ {
      *     {@link Byte }
      *     
      */
-    public Byte getVersion() {
+    public Double getVersion() {
         return version;
     }
 
@@ -358,7 +358,7 @@ public class OTAHotelAvailGetRQ {
      *     {@link Byte }
      *     
      */
-    public void setVersion(Byte value) {
+    public void setVersion(Double value) {
         this.version = value;
     }
 
@@ -487,7 +487,7 @@ public class OTAHotelAvailGetRQ {
     })
     public static class HotelAvailRequests {
 
-        @XmlElement(name = "HotelAvailRequest", required = true)
+        @XmlElement(name = "HotelAvailRequest", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
         protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest hotelAvailRequest;
 
         /**
@@ -631,11 +631,11 @@ public class OTAHotelAvailGetRQ {
         })
         public static class HotelAvailRequest {
 
-            @XmlElement(name = "DateRange", required = true)
+            @XmlElement(name = "DateRange", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
             protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.DateRange dateRange;
-            @XmlElement(name = "RatePlanCandidates", required = true)
+            @XmlElement(name = "RatePlanCandidates", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
             protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RatePlanCandidates ratePlanCandidates;
-            @XmlElement(name = "RoomTypeCandidates", required = true)
+            @XmlElement(name = "RoomTypeCandidates", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
             protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RoomTypeCandidates roomTypeCandidates;
 
             /**
@@ -872,7 +872,7 @@ public class OTAHotelAvailGetRQ {
             })
             public static class RatePlanCandidates {
 
-                @XmlElement(name = "RatePlanCandidate", required = true)
+                @XmlElement(name = "RatePlanCandidate", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                 protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RatePlanCandidates.RatePlanCandidate ratePlanCandidate;
 
                 /**
@@ -943,7 +943,7 @@ public class OTAHotelAvailGetRQ {
                 })
                 public static class RatePlanCandidate {
 
-                    @XmlElement(name = "HotelRefs", required = true)
+                    @XmlElement(name = "HotelRefs", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                     protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RatePlanCandidates.RatePlanCandidate.HotelRefs hotelRefs;
 
                     /**
@@ -1004,7 +1004,7 @@ public class OTAHotelAvailGetRQ {
                     })
                     public static class HotelRefs {
 
-                        @XmlElement(name = "HotelRef")
+                        @XmlElement(name = "HotelRef", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                         protected List<OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RatePlanCandidates.RatePlanCandidate.HotelRefs.HotelRef> hotelRef;
 
                         /**
@@ -1177,7 +1177,7 @@ public class OTAHotelAvailGetRQ {
             })
             public static class RoomTypeCandidates {
 
-                @XmlElement(name = "RoomTypeCandidate", required = true)
+                @XmlElement(name = "RoomTypeCandidate", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                 protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RoomTypeCandidates.RoomTypeCandidate roomTypeCandidate;
 
                 /**
@@ -1250,7 +1250,7 @@ public class OTAHotelAvailGetRQ {
                 })
                 public static class RoomTypeCandidate {
 
-                    @XmlElement(name = "GuestCounts", required = true)
+                    @XmlElement(name = "GuestCounts", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                     protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RoomTypeCandidates.RoomTypeCandidate.GuestCounts guestCounts;
                     @XmlAttribute(name = "Quantity")
                     protected Integer quantity;
@@ -1338,7 +1338,7 @@ public class OTAHotelAvailGetRQ {
                     })
                     public static class GuestCounts {
 
-                        @XmlElement(name = "GuestCount", required = true)
+                        @XmlElement(name = "GuestCount", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                         protected OTAHotelAvailGetRQ.HotelAvailRequests.HotelAvailRequest.RoomTypeCandidates.RoomTypeCandidate.GuestCounts.GuestCount guestCount;
 
                         /**
@@ -1539,7 +1539,7 @@ public class OTAHotelAvailGetRQ {
     })
     public static class POS {
 
-        @XmlElement(name = "Source", required = true)
+        @XmlElement(name = "Source", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
         protected OTAHotelAvailGetRQ.POS.Source source;
 
         /**
@@ -1614,7 +1614,7 @@ public class OTAHotelAvailGetRQ {
         })
         public static class Source {
 
-            @XmlElement(name = "RequestorID", required = true)
+            @XmlElement(name = "RequestorID", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
             protected OTAHotelAvailGetRQ.POS.Source.RequestorID requestorID;
 
             /**
@@ -1679,7 +1679,7 @@ public class OTAHotelAvailGetRQ {
             })
             public static class RequestorID {
 
-                @XmlElement(name = "CompanyName", required = true)
+                @XmlElement(name = "CompanyName", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                 protected OTAHotelAvailGetRQ.POS.Source.RequestorID.CompanyName companyName;
                 @XmlAttribute(name = "Type")
                 protected Integer type;

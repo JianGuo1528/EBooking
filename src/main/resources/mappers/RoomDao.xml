@@ -1,51 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ustrip.dao.RoomDao">  
- 
- <select id="selectCountByRoomTypeIdAndHotelId" parameterType="map" resultType="int">
- 		SELECT COUNT(1) FROM eb_hotel_room_type WHERE hotelId = #{hotelId} AND room_type_id = #{roomTypeId}
+<mapper namespace="com.ustrip.dao.RoomDao">
+
+    <select id="selectCountByRoomTypeIdAndHotelId" parameterType="map" resultType="int">
+ 		SELECT COUNT(1) FROM eb_hotel_room_type WHERE hotelId = #{hotelId} AND room_type_id = #{roomTypeId} and status = 1
  </select>
 
- 
- <insert id="addMappingByHotelAndRoomType" parameterType="map" >
- 		INSERT INTO eb_hotel_room_type( hotelId, room_type_id,status,update_time)  VALUES (#{hotelId}, #{roomTypeId}, 1,NOW())
+
+    <insert id="addMappingByHotelAndRoomType" parameterType="map">
+ 		INSERT INTO eb_hotel_room_type( hotelId, room_type_id, bed_type_id,status,update_time)  VALUES (#{hotelId}, #{roomTypeId}, #{bedTypeId}, 1,NOW())
  </insert>
- 
- 
- <update id="disableHotelRoomType" parameterType="map" >
+
+
+    <update id="disableHotelRoomType" parameterType="map">
  		UPDATE eb_hotel_room_type SET status = #{status},update_time = NOW() WHERE hotelId = #{hotelId} and room_type_id = #{roomTypeId};
  		UPDATE eb_plan set status = 2 WHERE hotelId = #{hotelId} and room_type_id = #{roomTypeId};
  </update>
- 
- 
- 
- 
- 
-   <select id="queryRoomTypes" parameterType="java.util.List" resultType="java.util.Map">
 
-      select hotelId, id room_type_id , type_name room_type_name, type_name_zh room_type_name_zh,ctrip_code
-      from eb_dict where type = 'room' and hotelId = 0
-      union all
-      select eb_hotel_room_type.hotelId, room_type_id ,eb_dict.type_name,eb_dict.type_name_zh,ctrip_code
+
+    <select id="queryRoomTypes" parameterType="java.util.List" resultType="java.util.Map">
+        select
+        eb_hotel_room_type.hotelId,
+        room_type_id ,
+        r.type_name room_type_name ,
+        r.type_name_zh room_type_name_zh ,
+        r.ctrip_room_type_name ,
+        r.ctrip_code,
+        b.ctrip_bed_code,
+        b.ctrip_bed_quantity,
+        b.ali_bed,
+        (select eb_plan.max_person FROM eb_plan WHERE hotelId = eb_hotel_room_type.hotelId AND room_type_id =
+        eb_hotel_room_type.room_type_id AND status = 1 limit 1 ) max_person
+        from eb_hotel_room_type
+        inner join eb_dict r on eb_hotel_room_type.room_type_id = r.id
+        inner join eb_dict b on eb_hotel_room_type.bed_type_id = b.id
+        where eb_hotel_room_type.status = 1 and eb_hotel_room_type.hotelId IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.hotelId, jdbcType=INTEGER}
+        </foreach>
+
+    </select>
+
+
+    <select id="queryRoomTypesByHotelId" parameterType="int" resultType="java.util.Map">
+      select
+	      eb_hotel_room_type.hotelId,
+	      room_type_id ,
+	      r.type_name room_type_name ,
+	      r.type_name_zh room_type_name_zh ,
+	      r.ctrip_room_type_name ,
+	      r.ctrip_code,
+	      b.ctrip_bed_code,
+	      b.ctrip_bed_quantity,
+	      b.ali_bed,
+          (select eb_plan.max_person  FROM eb_plan WHERE hotelId = eb_hotel_room_type.hotelId AND room_type_id = eb_hotel_room_type.room_type_id AND status = 1 limit 1 ) max_person
       from eb_hotel_room_type
-      inner join eb_dict on eb_hotel_room_type.room_type_id = eb_dict.id
-      where eb_hotel_room_type.status = 1 and eb_hotel_room_type.hotelId IN
-      <foreach item="item" collection="list" separator="," open="(" close=")" index="">
-          #{item.hotelId, jdbcType=INTEGER}
-      </foreach>
-
+      inner join eb_dict r on eb_hotel_room_type.room_type_id = r.id
+      inner join eb_dict b on eb_hotel_room_type.bed_type_id = b.id
+      where eb_hotel_room_type.status = 1 and eb_hotel_room_type.hotelId = #{hotelId}
   </select>
- 
- 
- <select id="queryBedListByHotelIdAndRoomTypeId" parameterType="map" resultType="java.util.Map">
-		SELECT code,name,quantity,category_code
-		FROM eb_map_bed_cbed 
-		INNER JOIN ctrip_d_bed_type  on eb_map_bed_cbed.ctrip_bed_id = ctrip_d_bed_type.`code`
-		WHERE eb_bed_id = (
-			SELECT bed_type_id FROM eb_plan WHERE  hotelId = #{hotelId} AND room_type_id = #{room_type_id} AND status = 1 limit 1
-		)
- </select>
- 
+
+
+    <select id="queryRateDetailByPlanId" parameterType="int" resultType="java.util.Map">
+ 		SELECT plan_id, plan_name, hotelId, room_type_id, bed_type_id, breakfast_type_id, max_person, status
+		FROM eb_plan
+		WHERE status = 1 AND plan_id = #{planId}
+  </select>
+
+    <select id="queryRateByPlanId" parameterType="int" resultType="java.util.Map">
+		SELECT `date`, CAST(price * 100 AS signed) price, quota
+		FROM (
+			SELECT sale_date `date`,
+				(case when contract_price is null or contract_price = 0 then supplement_price else contract_price end ) price,
+				(case when contract_price is null or contract_price = 0 then supplement_available_amount else contract_available_amount end ) quota
+			FROM eb_plan_detail
+			INNER JOIN eb_plan ON eb_plan.plan_id = eb_plan_detail.plan_id
+			WHERE eb_plan_detail.push_status = 0 AND eb_plan.status = 1 AND plan_id = #{planId} AND sale_date BETWEEN CURDATE() AND date_add(CURDATE(), interval 180 day)
+
+		) T
+		WHERE price is not null AND price != 0
+  </select>
+
+    <select id="selectPlanDetailsByPushStatus" parameterType="int" resultType="java.util.Map">
+		SELECT plan_id, room_type_id, `date`, CAST(price * 100 AS signed) price, quota
+		FROM (
+			SELECT eb_plan.plan_id,
+				eb_plan.room_type_id,
+				sale_date `date`,
+				(case when contract_price is null or contract_price = 0 then supplement_price else contract_price end ) price,
+				(case when contract_price is null or contract_price = 0 then supplement_available_amount else contract_available_amount end ) quota
+			FROM eb_plan_detail
+			INNER JOIN eb_plan ON eb_plan.plan_id = eb_plan_detail.plan_id
+			WHERE eb_plan_detail.push_status = #{pushStatus} AND eb_plan.status = 1 AND sale_date BETWEEN CURDATE() AND date_add(CURDATE(), interval 180 day)
+		) T
+		WHERE price is not null AND price != 0
+  </select>
+
+    <update id="updatePushStatus" parameterType="int">
+        UPDATE eb_plan_detail
+        SET push_status = 1
+        WHERE push_status = 0 AND sale_date BETWEEN CURDATE() AND date_add(CURDATE(), interval 180 day)
+        <if test="planId != null and planId != ''">AND plan_id = #{planId}</if>
+  </update>
+
+    <select id="selectPlanDetailsByDate" parameterType="string" resultType="java.util.Map">
+        SELECT sale_date `date`,
+               CAST((case when contract_price is null or contract_price = 0 then supplement_price else contract_price end ) * 100 AS signed) price,
+               contract_available_amount + supplement_available_amount quota
+               #(case when contract_price is null or contract_price = 0 then supplement_available_amount else contract_available_amount end ) quota
+        FROM eb_plan_detail
+        WHERE plan_id = #{plan_id} AND sale_date >= #{check_in} AND sale_date &lt; #{check_out}
+    </select>
+
 </mapper>

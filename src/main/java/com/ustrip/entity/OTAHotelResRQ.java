@@ -16,9 +16,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -592,14 +592,14 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
+ *
+ *
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "pos",
-    "uniqueID",
-    "hotelReservations"
+        "pos",
+        "uniqueID",
+        "hotelReservations"
 })
 @XmlRootElement(name = "OTA_HotelResRQ", namespace = "http://www.opentravel.org/OTA/2003/05")
 public class OTAHotelResRQ {
@@ -621,11 +621,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the pos property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link OTAHotelResRQ.POS }
-     *     
+     *
      */
     public OTAHotelResRQ.POS getPOS() {
         return pos;
@@ -633,11 +633,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the pos property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link OTAHotelResRQ.POS }
-     *     
+     *
      */
     public void setPOS(OTAHotelResRQ.POS value) {
         this.pos = value;
@@ -645,11 +645,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the uniqueID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link OTAHotelResRQ.UniqueID }
-     *     
+     *
      */
     public OTAHotelResRQ.UniqueID getUniqueID() {
         return uniqueID;
@@ -657,11 +657,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the uniqueID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link OTAHotelResRQ.UniqueID }
-     *     
+     *
      */
     public void setUniqueID(OTAHotelResRQ.UniqueID value) {
         this.uniqueID = value;
@@ -669,11 +669,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the hotelReservations property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link OTAHotelResRQ.HotelReservations }
-     *     
+     *
      */
     public OTAHotelResRQ.HotelReservations getHotelReservations() {
         return hotelReservations;
@@ -681,11 +681,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the hotelReservations property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link OTAHotelResRQ.HotelReservations }
-     *     
+     *
      */
     public void setHotelReservations(OTAHotelResRQ.HotelReservations value) {
         this.hotelReservations = value;
@@ -693,11 +693,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the version property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Float }
-     *     
+     *
      */
     public Float getVersion() {
         return version;
@@ -705,11 +705,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the version property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Float }
-     *     
+     *
      */
     public void setVersion(Float value) {
         this.version = value;
@@ -717,11 +717,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the primaryLangID property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getPrimaryLangID() {
         return primaryLangID;
@@ -729,11 +729,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the primaryLangID property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setPrimaryLangID(String value) {
         this.primaryLangID = value;
@@ -741,11 +741,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the echoToken property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link Long }
-     *     
+     *
      */
     public Long getEchoToken() {
         return echoToken;
@@ -753,11 +753,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the echoToken property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link Long }
-     *     
+     *
      */
     public void setEchoToken(Long value) {
         this.echoToken = value;
@@ -765,11 +765,11 @@ public class OTAHotelResRQ {
 
     /**
      * Gets the value of the retransmissionIndicator property.
-     * 
+     *
      * @return
      *     possible object is
      *     {@link String }
-     *     
+     *
      */
     public String getRetransmissionIndicator() {
         return retransmissionIndicator;
@@ -777,11 +777,11 @@ public class OTAHotelResRQ {
 
     /**
      * Sets the value of the retransmissionIndicator property.
-     * 
+     *
      * @param value
      *     allowed object is
      *     {@link String }
-     *     
+     *
      */
     public void setRetransmissionIndicator(String value) {
         this.retransmissionIndicator = value;
@@ -790,9 +790,9 @@ public class OTAHotelResRQ {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -1299,12 +1299,12 @@ public class OTAHotelResRQ {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "hotelReservation"
+            "hotelReservation"
     })
     public static class HotelReservations {
 
@@ -1313,11 +1313,11 @@ public class OTAHotelResRQ {
 
         /**
          * Gets the value of the hotelReservation property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation }
-         *     
+         *
          */
         public OTAHotelResRQ.HotelReservations.HotelReservation getHotelReservation() {
             return hotelReservation;
@@ -1325,11 +1325,11 @@ public class OTAHotelResRQ {
 
         /**
          * Sets the value of the hotelReservation property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation }
-         *     
+         *
          */
         public void setHotelReservation(OTAHotelResRQ.HotelReservations.HotelReservation value) {
             this.hotelReservation = value;
@@ -1338,9 +1338,9 @@ public class OTAHotelResRQ {
 
         /**
          * <p>Java class for anonymous complex type.
-         * 
+         *
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
+         *
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -1837,14 +1837,14 @@ public class OTAHotelResRQ {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
-         * 
-         * 
+         *
+         *
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "roomStays",
-            "resGuests",
-            "resGlobalInfo"
+                "roomStays",
+                "resGuests",
+                "resGlobalInfo"
         })
         public static class HotelReservation {
 
@@ -1857,11 +1857,11 @@ public class OTAHotelResRQ {
 
             /**
              * Gets the value of the roomStays property.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays }
-             *     
+             *
              */
             public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays getRoomStays() {
                 return roomStays;
@@ -1869,11 +1869,11 @@ public class OTAHotelResRQ {
 
             /**
              * Sets the value of the roomStays property.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays }
-             *     
+             *
              */
             public void setRoomStays(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays value) {
                 this.roomStays = value;
@@ -1881,11 +1881,11 @@ public class OTAHotelResRQ {
 
             /**
              * Gets the value of the resGuests property.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests }
-             *     
+             *
              */
             public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests getResGuests() {
                 return resGuests;
@@ -1893,11 +1893,11 @@ public class OTAHotelResRQ {
 
             /**
              * Sets the value of the resGuests property.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests }
-             *     
+             *
              */
             public void setResGuests(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests value) {
                 this.resGuests = value;
@@ -1905,11 +1905,11 @@ public class OTAHotelResRQ {
 
             /**
              * Gets the value of the resGlobalInfo property.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo }
-             *     
+             *
              */
             public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo getResGlobalInfo() {
                 return resGlobalInfo;
@@ -1917,11 +1917,11 @@ public class OTAHotelResRQ {
 
             /**
              * Sets the value of the resGlobalInfo property.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo }
-             *     
+             *
              */
             public void setResGlobalInfo(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo value) {
                 this.resGlobalInfo = value;
@@ -1930,9 +1930,9 @@ public class OTAHotelResRQ {
 
             /**
              * <p>Java class for anonymous complex type.
-             * 
+             *
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -2155,19 +2155,19 @@ public class OTAHotelResRQ {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "guestCounts",
-                "timeSpan",
-                "specialRequests",
-                "guarantee",
-                "depositPayments",
-                "total",
-                "tpaExtensions",
-                "hotelReservationIDs"
+                    "guestCounts",
+                    "timeSpan",
+                    "specialRequests",
+                    "guarantee",
+                    "depositPayments",
+                    "total",
+                    "tpaExtensions",
+                    "hotelReservationIDs"
             })
             public static class ResGlobalInfo {
 
@@ -2190,11 +2190,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the guestCounts property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts getGuestCounts() {
                     return guestCounts;
@@ -2202,11 +2202,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the guestCounts property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts }
-                 *     
+                 *
                  */
                 public void setGuestCounts(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts value) {
                     this.guestCounts = value;
@@ -2214,11 +2214,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the timeSpan property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TimeSpan }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TimeSpan getTimeSpan() {
                     return timeSpan;
@@ -2226,11 +2226,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the timeSpan property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TimeSpan }
-                 *     
+                 *
                  */
                 public void setTimeSpan(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TimeSpan value) {
                     this.timeSpan = value;
@@ -2238,11 +2238,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the specialRequests property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests getSpecialRequests() {
                     return specialRequests;
@@ -2250,11 +2250,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the specialRequests property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests }
-                 *     
+                 *
                  */
                 public void setSpecialRequests(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests value) {
                     this.specialRequests = value;
@@ -2262,11 +2262,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the guarantee property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee getGuarantee() {
                     return guarantee;
@@ -2274,11 +2274,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the guarantee property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee }
-                 *     
+                 *
                  */
                 public void setGuarantee(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee value) {
                     this.guarantee = value;
@@ -2286,11 +2286,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the depositPayments property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments getDepositPayments() {
                     return depositPayments;
@@ -2298,11 +2298,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the depositPayments property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments }
-                 *     
+                 *
                  */
                 public void setDepositPayments(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments value) {
                     this.depositPayments = value;
@@ -2310,11 +2310,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the total property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Total }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Total getTotal() {
                     return total;
@@ -2322,11 +2322,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the total property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Total }
-                 *     
+                 *
                  */
                 public void setTotal(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Total value) {
                     this.total = value;
@@ -2334,11 +2334,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the tpaExtensions property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TPAExtensions }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TPAExtensions getTPAExtensions() {
                     return tpaExtensions;
@@ -2346,11 +2346,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the tpaExtensions property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TPAExtensions }
-                 *     
+                 *
                  */
                 public void setTPAExtensions(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.TPAExtensions value) {
                     this.tpaExtensions = value;
@@ -2358,11 +2358,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the hotelReservationIDs property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs getHotelReservationIDs() {
                     return hotelReservationIDs;
@@ -2370,11 +2370,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the hotelReservationIDs property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs }
-                 *     
+                 *
                  */
                 public void setHotelReservationIDs(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs value) {
                     this.hotelReservationIDs = value;
@@ -2383,9 +2383,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -2441,12 +2441,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "guaranteePayment"
+                        "guaranteePayment"
                 })
                 public static class DepositPayments {
 
@@ -2455,11 +2455,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the guaranteePayment property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment getGuaranteePayment() {
                         return guaranteePayment;
@@ -2467,11 +2467,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the guaranteePayment property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment }
-                     *     
+                     *
                      */
                     public void setGuaranteePayment(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment value) {
                         this.guaranteePayment = value;
@@ -2480,9 +2480,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -2528,12 +2528,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "acceptedPayments"
+                            "acceptedPayments"
                     })
                     public static class GuaranteePayment {
 
@@ -2542,11 +2542,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the acceptedPayments property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments getAcceptedPayments() {
                             return acceptedPayments;
@@ -2554,11 +2554,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the acceptedPayments property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments }
-                         *     
+                         *
                          */
                         public void setAcceptedPayments(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments value) {
                             this.acceptedPayments = value;
@@ -2567,9 +2567,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -2605,12 +2605,12 @@ public class OTAHotelResRQ {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "acceptedPayment"
+                                "acceptedPayment"
                         })
                         public static class AcceptedPayments {
 
@@ -2619,11 +2619,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the acceptedPayment property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment }
-                             *     
+                             *
                              */
                             public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment getAcceptedPayment() {
                                 return acceptedPayment;
@@ -2631,11 +2631,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the acceptedPayment property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment }
-                             *     
+                             *
                              */
                             public void setAcceptedPayment(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment value) {
                                 this.acceptedPayment = value;
@@ -2644,9 +2644,9 @@ public class OTAHotelResRQ {
 
                             /**
                              * <p>Java class for anonymous complex type.
-                             * 
+                             *
                              * <p>The following schema fragment specifies the expected content contained within this class.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -2672,12 +2672,12 @@ public class OTAHotelResRQ {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "paymentCard"
+                                    "paymentCard"
                             })
                             public static class AcceptedPayment {
 
@@ -2686,11 +2686,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the paymentCard property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment.PaymentCard }
-                                 *     
+                                 *
                                  */
                                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment.PaymentCard getPaymentCard() {
                                     return paymentCard;
@@ -2698,11 +2698,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the paymentCard property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment.PaymentCard }
-                                 *     
+                                 *
                                  */
                                 public void setPaymentCard(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.DepositPayments.GuaranteePayment.AcceptedPayments.AcceptedPayment.PaymentCard value) {
                                     this.paymentCard = value;
@@ -2711,9 +2711,9 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * <p>Java class for anonymous complex type.
-                                 * 
+                                 *
                                  * <p>The following schema fragment specifies the expected content contained within this class.
-                                 * 
+                                 *
                                  * <pre>
                                  * &lt;complexType>
                                  *   &lt;complexContent>
@@ -2729,33 +2729,33 @@ public class OTAHotelResRQ {
                                  *   &lt;/complexContent>
                                  * &lt;/complexType>
                                  * </pre>
-                                 * 
-                                 * 
+                                 *
+                                 *
                                  */
                                 @XmlAccessorType(XmlAccessType.FIELD)
                                 @XmlType(name = "", propOrder = {
-                                    "cardHolderName"
+                                        "cardHolderName"
                                 })
                                 public static class PaymentCard {
 
                                     @XmlElement(name = "CardHolderName", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                                     protected String cardHolderName;
                                     @XmlAttribute(name = "ExpireDate")
-                                    protected Short expireDate;
+                                    protected String expireDate;
                                     @XmlAttribute(name = "CardType")
-                                    protected Byte cardType;
+                                    protected String cardType;
                                     @XmlAttribute(name = "CardCode")
                                     protected String cardCode;
                                     @XmlAttribute(name = "CardNumber")
-                                    protected Long cardNumber;
+                                    protected String cardNumber;
 
                                     /**
                                      * Gets the value of the cardHolderName property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public String getCardHolderName() {
                                         return cardHolderName;
@@ -2763,11 +2763,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the cardHolderName property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public void setCardHolderName(String value) {
                                         this.cardHolderName = value;
@@ -2775,59 +2775,59 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the expireDate property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
-                                     *     {@link Short }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public Short getExpireDate() {
+                                    public String getExpireDate() {
                                         return expireDate;
                                     }
 
                                     /**
                                      * Sets the value of the expireDate property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
-                                     *     {@link Short }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public void setExpireDate(Short value) {
+                                    public void setExpireDate(String value) {
                                         this.expireDate = value;
                                     }
 
                                     /**
                                      * Gets the value of the cardType property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
-                                     *     {@link Byte }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public Byte getCardType() {
+                                    public String getCardType() {
                                         return cardType;
                                     }
 
                                     /**
                                      * Sets the value of the cardType property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
-                                     *     {@link Byte }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public void setCardType(Byte value) {
+                                    public void setCardType(String value) {
                                         this.cardType = value;
                                     }
 
                                     /**
                                      * Gets the value of the cardCode property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public String getCardCode() {
                                         return cardCode;
@@ -2835,11 +2835,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the cardCode property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public void setCardCode(String value) {
                                         this.cardCode = value;
@@ -2847,25 +2847,25 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the cardNumber property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
-                                     *     {@link Long }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public Long getCardNumber() {
+                                    public String getCardNumber() {
                                         return cardNumber;
                                     }
 
                                     /**
                                      * Sets the value of the cardNumber property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
-                                     *     {@link Long }
-                                     *     
+                                     *     {@link String }
+                                     *
                                      */
-                                    public void setCardNumber(Long value) {
+                                    public void setCardNumber(String value) {
                                         this.cardNumber = value;
                                     }
 
@@ -2882,9 +2882,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -2931,12 +2931,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "guaranteesAccepted"
+                        "guaranteesAccepted"
                 })
                 public static class Guarantee {
 
@@ -2947,11 +2947,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the guaranteesAccepted property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted getGuaranteesAccepted() {
                         return guaranteesAccepted;
@@ -2959,11 +2959,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the guaranteesAccepted property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted }
-                     *     
+                     *
                      */
                     public void setGuaranteesAccepted(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted value) {
                         this.guaranteesAccepted = value;
@@ -2971,11 +2971,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the guaranteeCode property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getGuaranteeCode() {
                         return guaranteeCode;
@@ -2983,11 +2983,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the guaranteeCode property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setGuaranteeCode(String value) {
                         this.guaranteeCode = value;
@@ -2996,9 +2996,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -3034,12 +3034,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "guaranteeAccepted"
+                            "guaranteeAccepted"
                     })
                     public static class GuaranteesAccepted {
 
@@ -3048,11 +3048,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the guaranteeAccepted property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted getGuaranteeAccepted() {
                             return guaranteeAccepted;
@@ -3060,11 +3060,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the guaranteeAccepted property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted }
-                         *     
+                         *
                          */
                         public void setGuaranteeAccepted(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted value) {
                             this.guaranteeAccepted = value;
@@ -3073,9 +3073,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -3101,12 +3101,12 @@ public class OTAHotelResRQ {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "paymentCard"
+                                "paymentCard"
                         })
                         public static class GuaranteeAccepted {
 
@@ -3115,11 +3115,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the paymentCard property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted.PaymentCard }
-                             *     
+                             *
                              */
                             public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted.PaymentCard getPaymentCard() {
                                 return paymentCard;
@@ -3127,11 +3127,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the paymentCard property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted.PaymentCard }
-                             *     
+                             *
                              */
                             public void setPaymentCard(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.Guarantee.GuaranteesAccepted.GuaranteeAccepted.PaymentCard value) {
                                 this.paymentCard = value;
@@ -3140,9 +3140,9 @@ public class OTAHotelResRQ {
 
                             /**
                              * <p>Java class for anonymous complex type.
-                             * 
+                             *
                              * <p>The following schema fragment specifies the expected content contained within this class.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -3158,12 +3158,12 @@ public class OTAHotelResRQ {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "cardHolderName"
+                                    "cardHolderName"
                             })
                             public static class PaymentCard {
 
@@ -3180,11 +3180,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the cardHolderName property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public String getCardHolderName() {
                                     return cardHolderName;
@@ -3192,11 +3192,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the cardHolderName property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public void setCardHolderName(String value) {
                                     this.cardHolderName = value;
@@ -3204,11 +3204,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the cardNumber property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link Long }
-                                 *     
+                                 *
                                  */
                                 public Long getCardNumber() {
                                     return cardNumber;
@@ -3216,11 +3216,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the cardNumber property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link Long }
-                                 *     
+                                 *
                                  */
                                 public void setCardNumber(Long value) {
                                     this.cardNumber = value;
@@ -3228,11 +3228,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the cardType property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link Byte }
-                                 *     
+                                 *
                                  */
                                 public Byte getCardType() {
                                     return cardType;
@@ -3240,11 +3240,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the cardType property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link Byte }
-                                 *     
+                                 *
                                  */
                                 public void setCardType(Byte value) {
                                     this.cardType = value;
@@ -3252,11 +3252,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the cardCode property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public String getCardCode() {
                                     return cardCode;
@@ -3264,11 +3264,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the cardCode property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link String }
-                                 *     
+                                 *
                                  */
                                 public void setCardCode(String value) {
                                     this.cardCode = value;
@@ -3276,11 +3276,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the expireDate property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link Short }
-                                 *     
+                                 *
                                  */
                                 public Short getExpireDate() {
                                     return expireDate;
@@ -3288,11 +3288,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the expireDate property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link Short }
-                                 *     
+                                 *
                                  */
                                 public void setExpireDate(Short value) {
                                     this.expireDate = value;
@@ -3309,9 +3309,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -3332,12 +3332,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "guestCount"
+                        "guestCount"
                 })
                 public static class GuestCounts {
 
@@ -3346,25 +3346,25 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the guestCount property.
-                     * 
+                     *
                      * <p>
                      * This accessor method returns a reference to the live list,
                      * not a snapshot. Therefore any modification you make to the
                      * returned list will be present inside the JAXB object.
                      * This is why there is not a <CODE>set</CODE> method for the guestCount property.
-                     * 
+                     *
                      * <p>
                      * For example, to add a new item, do as follows:
                      * <pre>
                      *    getGuestCount().add(newItem);
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      * <p>
                      * Objects of the following type(s) are allowed in the list
                      * {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts.GuestCount }
-                     * 
-                     * 
+                     *
+                     *
                      */
                     public List<OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.GuestCounts.GuestCount> getGuestCount() {
                         if (guestCount == null) {
@@ -3376,9 +3376,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;simpleContent>
@@ -3389,12 +3389,12 @@ public class OTAHotelResRQ {
                      *   &lt;/simpleContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "value"
+                            "value"
                     })
                     public static class GuestCount {
 
@@ -3407,11 +3407,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the value property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getValue() {
                             return value;
@@ -3419,11 +3419,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the value property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setValue(String value) {
                             this.value = value;
@@ -3431,11 +3431,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the ageQualifyingGroup property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Byte }
-                         *     
+                         *
                          */
                         public Byte getAgeQualifyingGroup() {
                             return ageQualifyingGroup;
@@ -3443,11 +3443,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the ageQualifyingGroup property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Byte }
-                         *     
+                         *
                          */
                         public void setAgeQualifyingGroup(Byte value) {
                             this.ageQualifyingGroup = value;
@@ -3455,11 +3455,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the count property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Byte }
-                         *     
+                         *
                          */
                         public Byte getCount() {
                             return count;
@@ -3467,11 +3467,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the count property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Byte }
-                         *     
+                         *
                          */
                         public void setCount(Byte value) {
                             this.count = value;
@@ -3484,9 +3484,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -3507,12 +3507,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "hotelReservationID"
+                        "hotelReservationID"
                 })
                 public static class HotelReservationIDs {
 
@@ -3521,25 +3521,25 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the hotelReservationID property.
-                     * 
+                     *
                      * <p>
                      * This accessor method returns a reference to the live list,
                      * not a snapshot. Therefore any modification you make to the
                      * returned list will be present inside the JAXB object.
                      * This is why there is not a <CODE>set</CODE> method for the hotelReservationID property.
-                     * 
+                     *
                      * <p>
                      * For example, to add a new item, do as follows:
                      * <pre>
                      *    getHotelReservationID().add(newItem);
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      * <p>
                      * Objects of the following type(s) are allowed in the list
                      * {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs.HotelReservationID }
-                     * 
-                     * 
+                     *
+                     *
                      */
                     public List<OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.HotelReservationIDs.HotelReservationID> getHotelReservationID() {
                         if (hotelReservationID == null) {
@@ -3551,9 +3551,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;simpleContent>
@@ -3564,12 +3564,12 @@ public class OTAHotelResRQ {
                      *   &lt;/simpleContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "value"
+                            "value"
                     })
                     public static class HotelReservationID {
 
@@ -3582,11 +3582,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the value property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getValue() {
                             return value;
@@ -3594,11 +3594,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the value property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setValue(String value) {
                             this.value = value;
@@ -3606,11 +3606,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the resIDType property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link Short }
-                         *     
+                         *
                          */
                         public Short getResIDType() {
                             return resIDType;
@@ -3618,11 +3618,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the resIDType property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link Short }
-                         *     
+                         *
                          */
                         public void setResIDType(Short value) {
                             this.resIDType = value;
@@ -3630,11 +3630,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the resIDValue property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getResIDValue() {
                             return resIDValue;
@@ -3642,11 +3642,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the resIDValue property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setResIDValue(String value) {
                             this.resIDValue = value;
@@ -3659,9 +3659,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -3701,12 +3701,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "specialRequest"
+                        "specialRequest"
                 })
                 public static class SpecialRequests {
 
@@ -3715,11 +3715,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the specialRequest property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest getSpecialRequest() {
                         return specialRequest;
@@ -3727,11 +3727,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the specialRequest property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest }
-                     *     
+                     *
                      */
                     public void setSpecialRequest(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest value) {
                         this.specialRequest = value;
@@ -3740,9 +3740,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -3772,13 +3772,13 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "text",
-                        "listItem"
+                            "text",
+                            "listItem"
                     })
                     public static class SpecialRequest {
 
@@ -3789,11 +3789,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the text property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.Text }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.Text getText() {
                             return text;
@@ -3801,11 +3801,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the text property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.Text }
-                         *     
+                         *
                          */
                         public void setText(OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.Text value) {
                             this.text = value;
@@ -3813,25 +3813,25 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the listItem property.
-                         * 
+                         *
                          * <p>
                          * This accessor method returns a reference to the live list,
                          * not a snapshot. Therefore any modification you make to the
                          * returned list will be present inside the JAXB object.
                          * This is why there is not a <CODE>set</CODE> method for the listItem property.
-                         * 
+                         *
                          * <p>
                          * For example, to add a new item, do as follows:
                          * <pre>
                          *    getListItem().add(newItem);
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          * <p>
                          * Objects of the following type(s) are allowed in the list
                          * {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.ListItem }
-                         * 
-                         * 
+                         *
+                         *
                          */
                         public List<OTAHotelResRQ.HotelReservations.HotelReservation.ResGlobalInfo.SpecialRequests.SpecialRequest.ListItem> getListItem() {
                             if (listItem == null) {
@@ -3843,9 +3843,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;simpleContent>
@@ -3855,12 +3855,12 @@ public class OTAHotelResRQ {
                          *   &lt;/simpleContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "value"
+                                "value"
                         })
                         public static class ListItem {
 
@@ -3871,11 +3871,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the value property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getValue() {
                                 return value;
@@ -3883,11 +3883,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the value property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setValue(String value) {
                                 this.value = value;
@@ -3895,11 +3895,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the listitem property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public Byte getListitem() {
                                 return listitem;
@@ -3907,11 +3907,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the listitem property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public void setListitem(Byte value) {
                                 this.listitem = value;
@@ -3922,9 +3922,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;simpleContent>
@@ -3935,12 +3935,12 @@ public class OTAHotelResRQ {
                          *   &lt;/simpleContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "value"
+                                "value"
                         })
                         public static class Text {
 
@@ -3953,11 +3953,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the value property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getValue() {
                                 return value;
@@ -3965,11 +3965,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the value property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setValue(String value) {
                                 this.value = value;
@@ -3977,11 +3977,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the language property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getLanguage() {
                                 return language;
@@ -3989,11 +3989,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the language property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setLanguage(String value) {
                                 this.language = value;
@@ -4001,11 +4001,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the textFormat property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getTextFormat() {
                                 return textFormat;
@@ -4013,11 +4013,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the textFormat property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setTextFormat(String value) {
                                 this.textFormat = value;
@@ -4032,9 +4032,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -4046,12 +4046,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "isReserved"
+                        "isReserved"
                 })
                 public static class TPAExtensions {
 
@@ -4060,11 +4060,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the isReserved property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getIsReserved() {
                         return isReserved;
@@ -4072,11 +4072,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the isReserved property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setIsReserved(String value) {
                         this.isReserved = value;
@@ -4087,9 +4087,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;simpleContent>
@@ -4100,12 +4100,12 @@ public class OTAHotelResRQ {
                  *   &lt;/simpleContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "value"
+                        "value"
                 })
                 public static class TimeSpan {
 
@@ -4118,11 +4118,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the value property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getValue() {
                         return value;
@@ -4130,11 +4130,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the value property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setValue(String value) {
                         this.value = value;
@@ -4142,11 +4142,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the end property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getEnd() {
                         return end;
@@ -4154,11 +4154,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the end property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setEnd(String value) {
                         this.end = value;
@@ -4166,11 +4166,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the start property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getStart() {
                         return start;
@@ -4178,11 +4178,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the start property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setStart(String value) {
                         this.start = value;
@@ -4193,9 +4193,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;simpleContent>
@@ -4207,12 +4207,12 @@ public class OTAHotelResRQ {
                  *   &lt;/simpleContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "value"
+                        "value"
                 })
                 public static class Total {
 
@@ -4227,11 +4227,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the value property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getValue() {
                         return value;
@@ -4239,11 +4239,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the value property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setValue(String value) {
                         this.value = value;
@@ -4251,11 +4251,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the amountBeforeTax property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Double }
-                     *     
+                     *
                      */
                     public Double getAmountBeforeTax() {
                         return amountBeforeTax;
@@ -4263,11 +4263,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the amountBeforeTax property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Double }
-                     *     
+                     *
                      */
                     public void setAmountBeforeTax(Double value) {
                         this.amountBeforeTax = value;
@@ -4275,11 +4275,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the amountAfterTax property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Double }
-                     *     
+                     *
                      */
                     public Double getAmountAfterTax() {
                         return amountAfterTax;
@@ -4287,11 +4287,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the amountAfterTax property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Double }
-                     *     
+                     *
                      */
                     public void setAmountAfterTax(Double value) {
                         this.amountAfterTax = value;
@@ -4299,11 +4299,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the currencyCode property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getCurrencyCode() {
                         return currencyCode;
@@ -4311,11 +4311,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the currencyCode property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setCurrencyCode(String value) {
                         this.currencyCode = value;
@@ -4328,9 +4328,9 @@ public class OTAHotelResRQ {
 
             /**
              * <p>Java class for anonymous complex type.
-             * 
+             *
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -4448,12 +4448,12 @@ public class OTAHotelResRQ {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "resGuest"
+                    "resGuest"
             })
             public static class ResGuests {
 
@@ -4462,11 +4462,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the resGuest property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest getResGuest() {
                     return resGuest;
@@ -4474,11 +4474,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the resGuest property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest }
-                 *     
+                 *
                  */
                 public void setResGuest(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest value) {
                     this.resGuest = value;
@@ -4487,9 +4487,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -4597,12 +4597,12 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "profiles"
+                        "profiles"
                 })
                 public static class ResGuest {
 
@@ -4613,11 +4613,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the profiles property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles getProfiles() {
                         return profiles;
@@ -4625,11 +4625,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the profiles property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles }
-                     *     
+                     *
                      */
                     public void setProfiles(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles value) {
                         this.profiles = value;
@@ -4637,11 +4637,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the arrivalTime property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getArrivalTime() {
                         return arrivalTime;
@@ -4649,11 +4649,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the arrivalTime property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setArrivalTime(String value) {
                         this.arrivalTime = value;
@@ -4662,9 +4662,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -4761,12 +4761,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "profileInfo"
+                            "profileInfo"
                     })
                     public static class Profiles {
 
@@ -4775,11 +4775,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the profileInfo property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo getProfileInfo() {
                             return profileInfo;
@@ -4787,11 +4787,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the profileInfo property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo }
-                         *     
+                         *
                          */
                         public void setProfileInfo(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo value) {
                             this.profileInfo = value;
@@ -4800,9 +4800,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -4889,12 +4889,12 @@ public class OTAHotelResRQ {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "profile"
+                                "profile"
                         })
                         public static class ProfileInfo {
 
@@ -4903,11 +4903,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the profile property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile }
-                             *     
+                             *
                              */
                             public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile getProfile() {
                                 return profile;
@@ -4915,11 +4915,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the profile property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile }
-                             *     
+                             *
                              */
                             public void setProfile(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile value) {
                                 this.profile = value;
@@ -4928,9 +4928,9 @@ public class OTAHotelResRQ {
 
                             /**
                              * <p>Java class for anonymous complex type.
-                             * 
+                             *
                              * <p>The following schema fragment specifies the expected content contained within this class.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -5007,12 +5007,12 @@ public class OTAHotelResRQ {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "customer"
+                                    "customer"
                             })
                             public static class Profile {
 
@@ -5021,11 +5021,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the customer property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer }
-                                 *     
+                                 *
                                  */
                                 public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer getCustomer() {
                                     return customer;
@@ -5033,11 +5033,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the customer property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer }
-                                 *     
+                                 *
                                  */
                                 public void setCustomer(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer value) {
                                     this.customer = value;
@@ -5046,9 +5046,9 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * <p>Java class for anonymous complex type.
-                                 * 
+                                 *
                                  * <p>The following schema fragment specifies the expected content contained within this class.
-                                 * 
+                                 *
                                  * <pre>
                                  * &lt;complexType>
                                  *   &lt;complexContent>
@@ -5115,13 +5115,13 @@ public class OTAHotelResRQ {
                                  *   &lt;/complexContent>
                                  * &lt;/complexType>
                                  * </pre>
-                                 * 
-                                 * 
+                                 *
+                                 *
                                  */
                                 @XmlAccessorType(XmlAccessType.FIELD)
                                 @XmlType(name = "", propOrder = {
-                                    "personName",
-                                    "contactPerson"
+                                        "personName",
+                                        "contactPerson"
                                 })
                                 public static class Customer {
 
@@ -5132,25 +5132,25 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the personName property.
-                                     * 
+                                     *
                                      * <p>
                                      * This accessor method returns a reference to the live list,
                                      * not a snapshot. Therefore any modification you make to the
                                      * returned list will be present inside the JAXB object.
                                      * This is why there is not a <CODE>set</CODE> method for the personName property.
-                                     * 
+                                     *
                                      * <p>
                                      * For example, to add a new item, do as follows:
                                      * <pre>
                                      *    getPersonName().add(newItem);
                                      * </pre>
-                                     * 
-                                     * 
+                                     *
+                                     *
                                      * <p>
                                      * Objects of the following type(s) are allowed in the list
                                      * {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.PersonName }
-                                     * 
-                                     * 
+                                     *
+                                     *
                                      */
                                     public List<OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.PersonName> getPersonName() {
                                         if (personName == null) {
@@ -5161,11 +5161,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the contactPerson property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson }
-                                     *     
+                                     *
                                      */
                                     public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson getContactPerson() {
                                         return contactPerson;
@@ -5173,11 +5173,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the contactPerson property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson }
-                                     *     
+                                     *
                                      */
                                     public void setContactPerson(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson value) {
                                         this.contactPerson = value;
@@ -5186,9 +5186,9 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * <p>Java class for anonymous complex type.
-                                     * 
+                                     *
                                      * <p>The following schema fragment specifies the expected content contained within this class.
-                                     * 
+                                     *
                                      * <pre>
                                      * &lt;complexType>
                                      *   &lt;complexContent>
@@ -5222,14 +5222,14 @@ public class OTAHotelResRQ {
                                      *   &lt;/complexContent>
                                      * &lt;/complexType>
                                      * </pre>
-                                     * 
-                                     * 
+                                     *
+                                     *
                                      */
                                     @XmlAccessorType(XmlAccessType.FIELD)
                                     @XmlType(name = "", propOrder = {
-                                        "personName",
-                                        "telephone",
-                                        "email"
+                                            "personName",
+                                            "telephone",
+                                            "email"
                                     })
                                     public static class ContactPerson {
 
@@ -5244,11 +5244,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the personName property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.PersonName }
-                                         *     
+                                         *
                                          */
                                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.PersonName getPersonName() {
                                             return personName;
@@ -5256,11 +5256,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the personName property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.PersonName }
-                                         *     
+                                         *
                                          */
                                         public void setPersonName(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.PersonName value) {
                                             this.personName = value;
@@ -5268,11 +5268,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the telephone property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.Telephone }
-                                         *     
+                                         *
                                          */
                                         public OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.Telephone getTelephone() {
                                             return telephone;
@@ -5280,11 +5280,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the telephone property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.Telephone }
-                                         *     
+                                         *
                                          */
                                         public void setTelephone(OTAHotelResRQ.HotelReservations.HotelReservation.ResGuests.ResGuest.Profiles.ProfileInfo.Profile.Customer.ContactPerson.Telephone value) {
                                             this.telephone = value;
@@ -5292,11 +5292,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the email property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getEmail() {
                                             return email;
@@ -5304,11 +5304,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the email property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setEmail(String value) {
                                             this.email = value;
@@ -5316,11 +5316,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the contactType property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getContactType() {
                                             return contactType;
@@ -5328,11 +5328,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the contactType property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setContactType(String value) {
                                             this.contactType = value;
@@ -5341,9 +5341,9 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * <p>Java class for anonymous complex type.
-                                         * 
+                                         *
                                          * <p>The following schema fragment specifies the expected content contained within this class.
-                                         * 
+                                         *
                                          * <pre>
                                          * &lt;complexType>
                                          *   &lt;complexContent>
@@ -5356,13 +5356,13 @@ public class OTAHotelResRQ {
                                          *   &lt;/complexContent>
                                          * &lt;/complexType>
                                          * </pre>
-                                         * 
-                                         * 
+                                         *
+                                         *
                                          */
                                         @XmlAccessorType(XmlAccessType.FIELD)
                                         @XmlType(name = "", propOrder = {
-                                            "givenName",
-                                            "surname"
+                                                "givenName",
+                                                "surname"
                                         })
                                         public static class PersonName {
 
@@ -5373,11 +5373,11 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Gets the value of the givenName property.
-                                             * 
+                                             *
                                              * @return
                                              *     possible object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public String getGivenName() {
                                                 return givenName;
@@ -5385,11 +5385,11 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Sets the value of the givenName property.
-                                             * 
+                                             *
                                              * @param value
                                              *     allowed object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public void setGivenName(String value) {
                                                 this.givenName = value;
@@ -5397,11 +5397,11 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Gets the value of the surname property.
-                                             * 
+                                             *
                                              * @return
                                              *     possible object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public String getSurname() {
                                                 return surname;
@@ -5409,11 +5409,11 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Sets the value of the surname property.
-                                             * 
+                                             *
                                              * @param value
                                              *     allowed object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public void setSurname(String value) {
                                                 this.surname = value;
@@ -5424,9 +5424,9 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * <p>Java class for anonymous complex type.
-                                         * 
+                                         *
                                          * <p>The following schema fragment specifies the expected content contained within this class.
-                                         * 
+                                         *
                                          * <pre>
                                          * &lt;complexType>
                                          *   &lt;simpleContent>
@@ -5436,27 +5436,27 @@ public class OTAHotelResRQ {
                                          *   &lt;/simpleContent>
                                          * &lt;/complexType>
                                          * </pre>
-                                         * 
-                                         * 
+                                         *
+                                         *
                                          */
                                         @XmlAccessorType(XmlAccessType.FIELD)
                                         @XmlType(name = "", propOrder = {
-                                            "value"
+                                                "value"
                                         })
                                         public static class Telephone {
 
                                             @XmlValue
                                             protected String value;
                                             @XmlAttribute(name = "PhoneNumber")
-                                            protected Long phoneNumber;
+                                            protected String phoneNumber;
 
                                             /**
                                              * Gets the value of the value property.
-                                             * 
+                                             *
                                              * @return
                                              *     possible object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public String getValue() {
                                                 return value;
@@ -5464,11 +5464,11 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Sets the value of the value property.
-                                             * 
+                                             *
                                              * @param value
                                              *     allowed object is
                                              *     {@link String }
-                                             *     
+                                             *
                                              */
                                             public void setValue(String value) {
                                                 this.value = value;
@@ -5476,25 +5476,25 @@ public class OTAHotelResRQ {
 
                                             /**
                                              * Gets the value of the phoneNumber property.
-                                             * 
+                                             *
                                              * @return
                                              *     possible object is
-                                             *     {@link Long }
-                                             *     
+                                             *     {@link String }
+                                             *
                                              */
-                                            public Long getPhoneNumber() {
+                                            public String getPhoneNumber() {
                                                 return phoneNumber;
                                             }
 
                                             /**
                                              * Sets the value of the phoneNumber property.
-                                             * 
+                                             *
                                              * @param value
                                              *     allowed object is
-                                             *     {@link Long }
-                                             *     
+                                             *     {@link String }
+                                             *
                                              */
-                                            public void setPhoneNumber(Long value) {
+                                            public void setPhoneNumber(String value) {
                                                 this.phoneNumber = value;
                                             }
 
@@ -5505,9 +5505,9 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * <p>Java class for anonymous complex type.
-                                     * 
+                                     *
                                      * <p>The following schema fragment specifies the expected content contained within this class.
-                                     * 
+                                     *
                                      * <pre>
                                      * &lt;complexType>
                                      *   &lt;complexContent>
@@ -5531,14 +5531,14 @@ public class OTAHotelResRQ {
                                      *   &lt;/complexContent>
                                      * &lt;/complexType>
                                      * </pre>
-                                     * 
-                                     * 
+                                     *
+                                     *
                                      */
                                     @XmlAccessorType(XmlAccessType.FIELD)
                                     @XmlType(name = "", propOrder = {
-                                        "givenName",
-                                        "middleName",
-                                        "surname"
+                                            "givenName",
+                                            "middleName",
+                                            "surname"
                                     })
                                     public static class PersonName {
 
@@ -5557,11 +5557,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the givenName property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getGivenName() {
                                             return givenName;
@@ -5569,11 +5569,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the givenName property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setGivenName(String value) {
                                             this.givenName = value;
@@ -5581,11 +5581,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the middleName property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getMiddleName() {
                                             return middleName;
@@ -5593,11 +5593,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the middleName property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setMiddleName(String value) {
                                             this.middleName = value;
@@ -5605,11 +5605,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the surname property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getSurname() {
                                             return surname;
@@ -5617,11 +5617,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the surname property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setSurname(String value) {
                                             this.surname = value;
@@ -5629,11 +5629,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the ageQualifyingCode property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link Byte }
-                                         *     
+                                         *
                                          */
                                         public Byte getAgeQualifyingCode() {
                                             return ageQualifyingCode;
@@ -5641,11 +5641,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the ageQualifyingCode property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link Byte }
-                                         *     
+                                         *
                                          */
                                         public void setAgeQualifyingCode(Byte value) {
                                             this.ageQualifyingCode = value;
@@ -5653,11 +5653,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the gender property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getGender() {
                                             return gender;
@@ -5665,11 +5665,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the gender property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setGender(String value) {
                                             this.gender = value;
@@ -5677,11 +5677,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the age property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link Byte }
-                                         *     
+                                         *
                                          */
                                         public Byte getAge() {
                                             return age;
@@ -5689,11 +5689,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the age property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link Byte }
-                                         *     
+                                         *
                                          */
                                         public void setAge(Byte value) {
                                             this.age = value;
@@ -5716,9 +5716,9 @@ public class OTAHotelResRQ {
 
             /**
              * <p>Java class for anonymous complex type.
-             * 
+             *
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -5866,12 +5866,12 @@ public class OTAHotelResRQ {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "roomStay"
+                    "roomStay"
             })
             public static class RoomStays {
 
@@ -5880,11 +5880,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the roomStay property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay getRoomStay() {
                     return roomStay;
@@ -5892,11 +5892,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the roomStay property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay }
-                 *     
+                 *
                  */
                 public void setRoomStay(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay value) {
                     this.roomStay = value;
@@ -5905,9 +5905,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;complexContent>
@@ -6045,15 +6045,15 @@ public class OTAHotelResRQ {
                  *   &lt;/complexContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "roomTypes",
-                    "ratePlans",
-                    "roomRates",
-                    "basicPropertyInfo"
+                        "roomTypes",
+                        "ratePlans",
+                        "roomRates",
+                        "basicPropertyInfo"
                 })
                 public static class RoomStay {
 
@@ -6068,11 +6068,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the roomTypes property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes getRoomTypes() {
                         return roomTypes;
@@ -6080,11 +6080,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the roomTypes property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes }
-                     *     
+                     *
                      */
                     public void setRoomTypes(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes value) {
                         this.roomTypes = value;
@@ -6092,11 +6092,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the ratePlans property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans getRatePlans() {
                         return ratePlans;
@@ -6104,11 +6104,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the ratePlans property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans }
-                     *     
+                     *
                      */
                     public void setRatePlans(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans value) {
                         this.ratePlans = value;
@@ -6116,11 +6116,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the roomRates property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates getRoomRates() {
                         return roomRates;
@@ -6128,11 +6128,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the roomRates property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates }
-                     *     
+                     *
                      */
                     public void setRoomRates(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates value) {
                         this.roomRates = value;
@@ -6140,11 +6140,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the basicPropertyInfo property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.BasicPropertyInfo }
-                     *     
+                     *
                      */
                     public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.BasicPropertyInfo getBasicPropertyInfo() {
                         return basicPropertyInfo;
@@ -6152,11 +6152,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the basicPropertyInfo property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.BasicPropertyInfo }
-                     *     
+                     *
                      */
                     public void setBasicPropertyInfo(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.BasicPropertyInfo value) {
                         this.basicPropertyInfo = value;
@@ -6165,9 +6165,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;simpleContent>
@@ -6178,29 +6178,29 @@ public class OTAHotelResRQ {
                      *   &lt;/simpleContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "value"
+                            "value"
                     })
                     public static class BasicPropertyInfo {
 
                         @XmlValue
                         protected String value;
                         @XmlAttribute(name = "HotelCode")
-                        protected Short hotelCode;
+                        protected String hotelCode;
                         @XmlAttribute(name = "HotelName")
                         protected String hotelName;
 
                         /**
                          * Gets the value of the value property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getValue() {
                             return value;
@@ -6208,11 +6208,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the value property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setValue(String value) {
                             this.value = value;
@@ -6220,35 +6220,35 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the hotelCode property.
-                         * 
+                         *
                          * @return
                          *     possible object is
-                         *     {@link Short }
-                         *     
+                         *     {@link String }
+                         *
                          */
-                        public Short getHotelCode() {
+                        public String getHotelCode() {
                             return hotelCode;
                         }
 
                         /**
                          * Sets the value of the hotelCode property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
-                         *     {@link Short }
-                         *     
+                         *     {@link String }
+                         *
                          */
-                        public void setHotelCode(Short value) {
+                        public void setHotelCode(String value) {
                             this.hotelCode = value;
                         }
 
                         /**
                          * Gets the value of the hotelName property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public String getHotelName() {
                             return hotelName;
@@ -6256,11 +6256,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the hotelName property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link String }
-                         *     
+                         *
                          */
                         public void setHotelName(String value) {
                             this.hotelName = value;
@@ -6271,9 +6271,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -6316,12 +6316,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "ratePlan"
+                            "ratePlan"
                     })
                     public static class RatePlans {
 
@@ -6330,11 +6330,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the ratePlan property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan getRatePlan() {
                             return ratePlan;
@@ -6342,11 +6342,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the ratePlan property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan }
-                         *     
+                         *
                          */
                         public void setRatePlan(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan value) {
                             this.ratePlan = value;
@@ -6355,9 +6355,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -6390,12 +6390,12 @@ public class OTAHotelResRQ {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "ratePlanDescription"
+                                "ratePlanDescription"
                         })
                         public static class RatePlan {
 
@@ -6408,11 +6408,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the ratePlanDescription property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription }
-                             *     
+                             *
                              */
                             public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription getRatePlanDescription() {
                                 return ratePlanDescription;
@@ -6420,11 +6420,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the ratePlanDescription property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription }
-                             *     
+                             *
                              */
                             public void setRatePlanDescription(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription value) {
                                 this.ratePlanDescription = value;
@@ -6432,11 +6432,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the ratePlanCode property.
-                             * 
+                             *
                              * @return
                              *     possible object is
-                             *     {@link Short }
-                             *     
+                             *     {@link String }
+                             *
                              */
                             public String getRatePlanCode() {
                                 return ratePlanCode;
@@ -6444,11 +6444,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the ratePlanCode property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
-                             *     {@link Short }
-                             *     
+                             *     {@link String }
+                             *
                              */
                             public void setRatePlanCode(String value) {
                                 this.ratePlanCode = value;
@@ -6456,11 +6456,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the prepaidIndicator property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getPrepaidIndicator() {
                                 return prepaidIndicator;
@@ -6468,11 +6468,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the prepaidIndicator property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setPrepaidIndicator(String value) {
                                 this.prepaidIndicator = value;
@@ -6481,9 +6481,9 @@ public class OTAHotelResRQ {
 
                             /**
                              * <p>Java class for anonymous complex type.
-                             * 
+                             *
                              * <p>The following schema fragment specifies the expected content contained within this class.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -6504,12 +6504,12 @@ public class OTAHotelResRQ {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "text"
+                                    "text"
                             })
                             public static class RatePlanDescription {
 
@@ -6518,11 +6518,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the text property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription.Text }
-                                 *     
+                                 *
                                  */
                                 public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription.Text getText() {
                                     return text;
@@ -6530,11 +6530,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the text property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription.Text }
-                                 *     
+                                 *
                                  */
                                 public void setText(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RatePlans.RatePlan.RatePlanDescription.Text value) {
                                     this.text = value;
@@ -6543,9 +6543,9 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * <p>Java class for anonymous complex type.
-                                 * 
+                                 *
                                  * <p>The following schema fragment specifies the expected content contained within this class.
-                                 * 
+                                 *
                                  * <pre>
                                  * &lt;complexType>
                                  *   &lt;simpleContent>
@@ -6556,12 +6556,12 @@ public class OTAHotelResRQ {
                                  *   &lt;/simpleContent>
                                  * &lt;/complexType>
                                  * </pre>
-                                 * 
-                                 * 
+                                 *
+                                 *
                                  */
                                 @XmlAccessorType(XmlAccessType.FIELD)
                                 @XmlType(name = "", propOrder = {
-                                    "value"
+                                        "value"
                                 })
                                 public static class Text {
 
@@ -6574,11 +6574,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the value property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public String getValue() {
                                         return value;
@@ -6586,11 +6586,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the value property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public void setValue(String value) {
                                         this.value = value;
@@ -6598,11 +6598,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the language property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public String getLanguage() {
                                         return language;
@@ -6610,11 +6610,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the language property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public void setLanguage(String value) {
                                         this.language = value;
@@ -6622,11 +6622,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the textFormat property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public String getTextFormat() {
                                         return textFormat;
@@ -6634,11 +6634,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the textFormat property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link String }
-                                     *     
+                                     *
                                      */
                                     public void setTextFormat(String value) {
                                         this.textFormat = value;
@@ -6655,9 +6655,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -6714,12 +6714,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "roomRate"
+                            "roomRate"
                     })
                     public static class RoomRates {
 
@@ -6728,11 +6728,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the roomRate property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate getRoomRate() {
                             return roomRate;
@@ -6740,11 +6740,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the roomRate property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate }
-                         *     
+                         *
                          */
                         public void setRoomRate(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate value) {
                             this.roomRate = value;
@@ -6753,9 +6753,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;complexContent>
@@ -6802,19 +6802,19 @@ public class OTAHotelResRQ {
                          *   &lt;/complexContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "rates"
+                                "rates"
                         })
                         public static class RoomRate {
 
                             @XmlElement(name = "Rates", namespace = "http://www.opentravel.org/OTA/2003/05", required = true)
                             protected OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates rates;
                             @XmlAttribute(name = "RatePlanCode")
-                            protected Short ratePlanCode;
+                            protected String ratePlanCode;
                             @XmlAttribute(name = "RatePlanCategory")
                             protected Byte ratePlanCategory;
                             @XmlAttribute(name = "NumberOfUnits")
@@ -6822,11 +6822,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the rates property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates }
-                             *     
+                             *
                              */
                             public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates getRates() {
                                 return rates;
@@ -6834,11 +6834,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the rates property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates }
-                             *     
+                             *
                              */
                             public void setRates(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates value) {
                                 this.rates = value;
@@ -6846,35 +6846,35 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the ratePlanCode property.
-                             * 
+                             *
                              * @return
                              *     possible object is
-                             *     {@link Short }
-                             *     
+                             *     {@link String }
+                             *
                              */
-                            public Short getRatePlanCode() {
+                            public String getRatePlanCode() {
                                 return ratePlanCode;
                             }
 
                             /**
                              * Sets the value of the ratePlanCode property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
-                             *     {@link Short }
-                             *     
+                             *     {@link String }
+                             *
                              */
-                            public void setRatePlanCode(Short value) {
+                            public void setRatePlanCode(String value) {
                                 this.ratePlanCode = value;
                             }
 
                             /**
                              * Gets the value of the ratePlanCategory property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public Byte getRatePlanCategory() {
                                 return ratePlanCategory;
@@ -6882,11 +6882,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the ratePlanCategory property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public void setRatePlanCategory(Byte value) {
                                 this.ratePlanCategory = value;
@@ -6894,11 +6894,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the numberOfUnits property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public Byte getNumberOfUnits() {
                                 return numberOfUnits;
@@ -6906,11 +6906,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the numberOfUnits property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link Byte }
-                             *     
+                             *
                              */
                             public void setNumberOfUnits(Byte value) {
                                 this.numberOfUnits = value;
@@ -6919,9 +6919,9 @@ public class OTAHotelResRQ {
 
                             /**
                              * <p>Java class for anonymous complex type.
-                             * 
+                             *
                              * <p>The following schema fragment specifies the expected content contained within this class.
-                             * 
+                             *
                              * <pre>
                              * &lt;complexType>
                              *   &lt;complexContent>
@@ -6955,12 +6955,12 @@ public class OTAHotelResRQ {
                              *   &lt;/complexContent>
                              * &lt;/complexType>
                              * </pre>
-                             * 
-                             * 
+                             *
+                             *
                              */
                             @XmlAccessorType(XmlAccessType.FIELD)
                             @XmlType(name = "", propOrder = {
-                                "rate"
+                                    "rate"
                             })
                             public static class Rates {
 
@@ -6969,11 +6969,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Gets the value of the rate property.
-                                 * 
+                                 *
                                  * @return
                                  *     possible object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate }
-                                 *     
+                                 *
                                  */
                                 public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate getRate() {
                                     return rate;
@@ -6981,11 +6981,11 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * Sets the value of the rate property.
-                                 * 
+                                 *
                                  * @param value
                                  *     allowed object is
                                  *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate }
-                                 *     
+                                 *
                                  */
                                 public void setRate(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate value) {
                                     this.rate = value;
@@ -6994,9 +6994,9 @@ public class OTAHotelResRQ {
 
                                 /**
                                  * <p>Java class for anonymous complex type.
-                                 * 
+                                 *
                                  * <p>The following schema fragment specifies the expected content contained within this class.
-                                 * 
+                                 *
                                  * <pre>
                                  * &lt;complexType>
                                  *   &lt;complexContent>
@@ -7020,12 +7020,12 @@ public class OTAHotelResRQ {
                                  *   &lt;/complexContent>
                                  * &lt;/complexType>
                                  * </pre>
-                                 * 
-                                 * 
+                                 *
+                                 *
                                  */
                                 @XmlAccessorType(XmlAccessType.FIELD)
                                 @XmlType(name = "", propOrder = {
-                                    "base"
+                                        "base"
                                 })
                                 public static class Rate {
 
@@ -7040,11 +7040,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the base property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate.Base }
-                                     *     
+                                     *
                                      */
                                     public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate.Base getBase() {
                                         return base;
@@ -7052,11 +7052,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the base property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate.Base }
-                                     *     
+                                     *
                                      */
                                     public void setBase(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomRates.RoomRate.Rates.Rate.Base value) {
                                         this.base = value;
@@ -7064,11 +7064,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the effectiveDate property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link XMLGregorianCalendar }
-                                     *     
+                                     *
                                      */
                                     public XMLGregorianCalendar getEffectiveDate() {
                                         return effectiveDate;
@@ -7076,11 +7076,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the effectiveDate property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link XMLGregorianCalendar }
-                                     *     
+                                     *
                                      */
                                     public void setEffectiveDate(XMLGregorianCalendar value) {
                                         this.effectiveDate = value;
@@ -7088,11 +7088,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Gets the value of the expireDate property.
-                                     * 
+                                     *
                                      * @return
                                      *     possible object is
                                      *     {@link XMLGregorianCalendar }
-                                     *     
+                                     *
                                      */
                                     public XMLGregorianCalendar getExpireDate() {
                                         return expireDate;
@@ -7100,11 +7100,11 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * Sets the value of the expireDate property.
-                                     * 
+                                     *
                                      * @param value
                                      *     allowed object is
                                      *     {@link XMLGregorianCalendar }
-                                     *     
+                                     *
                                      */
                                     public void setExpireDate(XMLGregorianCalendar value) {
                                         this.expireDate = value;
@@ -7113,9 +7113,9 @@ public class OTAHotelResRQ {
 
                                     /**
                                      * <p>Java class for anonymous complex type.
-                                     * 
+                                     *
                                      * <p>The following schema fragment specifies the expected content contained within this class.
-                                     * 
+                                     *
                                      * <pre>
                                      * &lt;complexType>
                                      *   &lt;simpleContent>
@@ -7127,12 +7127,12 @@ public class OTAHotelResRQ {
                                      *   &lt;/simpleContent>
                                      * &lt;/complexType>
                                      * </pre>
-                                     * 
-                                     * 
+                                     *
+                                     *
                                      */
                                     @XmlAccessorType(XmlAccessType.FIELD)
                                     @XmlType(name = "", propOrder = {
-                                        "value"
+                                            "value"
                                     })
                                     public static class Base {
 
@@ -7147,11 +7147,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the value property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getValue() {
                                             return value;
@@ -7159,11 +7159,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the value property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setValue(String value) {
                                             this.value = value;
@@ -7171,11 +7171,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the amountBeforeTax property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link Float }
-                                         *     
+                                         *
                                          */
                                         public Float getAmountBeforeTax() {
                                             return amountBeforeTax;
@@ -7183,11 +7183,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the amountBeforeTax property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link Float }
-                                         *     
+                                         *
                                          */
                                         public void setAmountBeforeTax(Float value) {
                                             this.amountBeforeTax = value;
@@ -7195,11 +7195,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the amountAfterTax property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link Float }
-                                         *     
+                                         *
                                          */
                                         public Float getAmountAfterTax() {
                                             return amountAfterTax;
@@ -7207,11 +7207,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the amountAfterTax property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link Float }
-                                         *     
+                                         *
                                          */
                                         public void setAmountAfterTax(Float value) {
                                             this.amountAfterTax = value;
@@ -7219,11 +7219,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Gets the value of the currencyCode property.
-                                         * 
+                                         *
                                          * @return
                                          *     possible object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public String getCurrencyCode() {
                                             return currencyCode;
@@ -7231,11 +7231,11 @@ public class OTAHotelResRQ {
 
                                         /**
                                          * Sets the value of the currencyCode property.
-                                         * 
+                                         *
                                          * @param value
                                          *     allowed object is
                                          *     {@link String }
-                                         *     
+                                         *
                                          */
                                         public void setCurrencyCode(String value) {
                                             this.currencyCode = value;
@@ -7254,9 +7254,9 @@ public class OTAHotelResRQ {
 
                     /**
                      * <p>Java class for anonymous complex type.
-                     * 
+                     *
                      * <p>The following schema fragment specifies the expected content contained within this class.
-                     * 
+                     *
                      * <pre>
                      * &lt;complexType>
                      *   &lt;complexContent>
@@ -7276,12 +7276,12 @@ public class OTAHotelResRQ {
                      *   &lt;/complexContent>
                      * &lt;/complexType>
                      * </pre>
-                     * 
-                     * 
+                     *
+                     *
                      */
                     @XmlAccessorType(XmlAccessType.FIELD)
                     @XmlType(name = "", propOrder = {
-                        "roomType"
+                            "roomType"
                     })
                     public static class RoomTypes {
 
@@ -7290,11 +7290,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Gets the value of the roomType property.
-                         * 
+                         *
                          * @return
                          *     possible object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes.RoomType }
-                         *     
+                         *
                          */
                         public OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes.RoomType getRoomType() {
                             return roomType;
@@ -7302,11 +7302,11 @@ public class OTAHotelResRQ {
 
                         /**
                          * Sets the value of the roomType property.
-                         * 
+                         *
                          * @param value
                          *     allowed object is
                          *     {@link OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes.RoomType }
-                         *     
+                         *
                          */
                         public void setRoomType(OTAHotelResRQ.HotelReservations.HotelReservation.RoomStays.RoomStay.RoomTypes.RoomType value) {
                             this.roomType = value;
@@ -7315,9 +7315,9 @@ public class OTAHotelResRQ {
 
                         /**
                          * <p>Java class for anonymous complex type.
-                         * 
+                         *
                          * <p>The following schema fragment specifies the expected content contained within this class.
-                         * 
+                         *
                          * <pre>
                          * &lt;complexType>
                          *   &lt;simpleContent>
@@ -7327,12 +7327,12 @@ public class OTAHotelResRQ {
                          *   &lt;/simpleContent>
                          * &lt;/complexType>
                          * </pre>
-                         * 
-                         * 
+                         *
+                         *
                          */
                         @XmlAccessorType(XmlAccessType.FIELD)
                         @XmlType(name = "", propOrder = {
-                            "value"
+                                "value"
                         })
                         public static class RoomType {
 
@@ -7343,11 +7343,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the value property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getValue() {
                                 return value;
@@ -7355,11 +7355,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the value property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setValue(String value) {
                                 this.value = value;
@@ -7367,11 +7367,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Gets the value of the roomTypeCode property.
-                             * 
+                             *
                              * @return
                              *     possible object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public String getRoomTypeCode() {
                                 return roomTypeCode;
@@ -7379,11 +7379,11 @@ public class OTAHotelResRQ {
 
                             /**
                              * Sets the value of the roomTypeCode property.
-                             * 
+                             *
                              * @param value
                              *     allowed object is
                              *     {@link String }
-                             *     
+                             *
                              */
                             public void setRoomTypeCode(String value) {
                                 this.roomTypeCode = value;
@@ -7404,9 +7404,9 @@ public class OTAHotelResRQ {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;complexContent>
@@ -7450,12 +7450,12 @@ public class OTAHotelResRQ {
      *   &lt;/complexContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "source"
+            "source"
     })
     public static class POS {
 
@@ -7464,11 +7464,11 @@ public class OTAHotelResRQ {
 
         /**
          * Gets the value of the source property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link OTAHotelResRQ.POS.Source }
-         *     
+         *
          */
         public OTAHotelResRQ.POS.Source getSource() {
             return source;
@@ -7476,11 +7476,11 @@ public class OTAHotelResRQ {
 
         /**
          * Sets the value of the source property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link OTAHotelResRQ.POS.Source }
-         *     
+         *
          */
         public void setSource(OTAHotelResRQ.POS.Source value) {
             this.source = value;
@@ -7489,9 +7489,9 @@ public class OTAHotelResRQ {
 
         /**
          * <p>Java class for anonymous complex type.
-         * 
+         *
          * <p>The following schema fragment specifies the expected content contained within this class.
-         * 
+         *
          * <pre>
          * &lt;complexType>
          *   &lt;complexContent>
@@ -7525,12 +7525,12 @@ public class OTAHotelResRQ {
          *   &lt;/complexContent>
          * &lt;/complexType>
          * </pre>
-         * 
-         * 
+         *
+         *
          */
         @XmlAccessorType(XmlAccessType.FIELD)
         @XmlType(name = "", propOrder = {
-            "requestorID"
+                "requestorID"
         })
         public static class Source {
 
@@ -7539,11 +7539,11 @@ public class OTAHotelResRQ {
 
             /**
              * Gets the value of the requestorID property.
-             * 
+             *
              * @return
              *     possible object is
              *     {@link OTAHotelResRQ.POS.Source.RequestorID }
-             *     
+             *
              */
             public OTAHotelResRQ.POS.Source.RequestorID getRequestorID() {
                 return requestorID;
@@ -7551,11 +7551,11 @@ public class OTAHotelResRQ {
 
             /**
              * Sets the value of the requestorID property.
-             * 
+             *
              * @param value
              *     allowed object is
              *     {@link OTAHotelResRQ.POS.Source.RequestorID }
-             *     
+             *
              */
             public void setRequestorID(OTAHotelResRQ.POS.Source.RequestorID value) {
                 this.requestorID = value;
@@ -7564,9 +7564,9 @@ public class OTAHotelResRQ {
 
             /**
              * <p>Java class for anonymous complex type.
-             * 
+             *
              * <p>The following schema fragment specifies the expected content contained within this class.
-             * 
+             *
              * <pre>
              * &lt;complexType>
              *   &lt;complexContent>
@@ -7590,12 +7590,12 @@ public class OTAHotelResRQ {
              *   &lt;/complexContent>
              * &lt;/complexType>
              * </pre>
-             * 
-             * 
+             *
+             *
              */
             @XmlAccessorType(XmlAccessType.FIELD)
             @XmlType(name = "", propOrder = {
-                "companyName"
+                    "companyName"
             })
             public static class RequestorID {
 
@@ -7610,11 +7610,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the companyName property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link OTAHotelResRQ.POS.Source.RequestorID.CompanyName }
-                 *     
+                 *
                  */
                 public OTAHotelResRQ.POS.Source.RequestorID.CompanyName getCompanyName() {
                     return companyName;
@@ -7622,11 +7622,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the companyName property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link OTAHotelResRQ.POS.Source.RequestorID.CompanyName }
-                 *     
+                 *
                  */
                 public void setCompanyName(OTAHotelResRQ.POS.Source.RequestorID.CompanyName value) {
                     this.companyName = value;
@@ -7634,11 +7634,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the id property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getID() {
                     return id;
@@ -7646,11 +7646,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the id property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setID(String value) {
                     this.id = value;
@@ -7658,11 +7658,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the messagePassword property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public String getMessagePassword() {
                     return messagePassword;
@@ -7670,11 +7670,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the messagePassword property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link String }
-                 *     
+                 *
                  */
                 public void setMessagePassword(String value) {
                     this.messagePassword = value;
@@ -7682,11 +7682,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Gets the value of the type property.
-                 * 
+                 *
                  * @return
                  *     possible object is
                  *     {@link Byte }
-                 *     
+                 *
                  */
                 public Byte getType() {
                     return type;
@@ -7694,11 +7694,11 @@ public class OTAHotelResRQ {
 
                 /**
                  * Sets the value of the type property.
-                 * 
+                 *
                  * @param value
                  *     allowed object is
                  *     {@link Byte }
-                 *     
+                 *
                  */
                 public void setType(Byte value) {
                     this.type = value;
@@ -7707,9 +7707,9 @@ public class OTAHotelResRQ {
 
                 /**
                  * <p>Java class for anonymous complex type.
-                 * 
+                 *
                  * <p>The following schema fragment specifies the expected content contained within this class.
-                 * 
+                 *
                  * <pre>
                  * &lt;complexType>
                  *   &lt;simpleContent>
@@ -7720,12 +7720,12 @@ public class OTAHotelResRQ {
                  *   &lt;/simpleContent>
                  * &lt;/complexType>
                  * </pre>
-                 * 
-                 * 
+                 *
+                 *
                  */
                 @XmlAccessorType(XmlAccessType.FIELD)
                 @XmlType(name = "", propOrder = {
-                    "value"
+                        "value"
                 })
                 public static class CompanyName {
 
@@ -7738,11 +7738,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the value property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getValue() {
                         return value;
@@ -7750,11 +7750,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the value property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setValue(String value) {
                         this.value = value;
@@ -7762,11 +7762,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the code property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public String getCode() {
                         return code;
@@ -7774,11 +7774,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the code property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link String }
-                     *     
+                     *
                      */
                     public void setCode(String value) {
                         this.code = value;
@@ -7786,11 +7786,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Gets the value of the codeContext property.
-                     * 
+                     *
                      * @return
                      *     possible object is
                      *     {@link Short }
-                     *     
+                     *
                      */
                     public Short getCodeContext() {
                         return codeContext;
@@ -7798,11 +7798,11 @@ public class OTAHotelResRQ {
 
                     /**
                      * Sets the value of the codeContext property.
-                     * 
+                     *
                      * @param value
                      *     allowed object is
                      *     {@link Short }
-                     *     
+                     *
                      */
                     public void setCodeContext(Short value) {
                         this.codeContext = value;
@@ -7819,9 +7819,9 @@ public class OTAHotelResRQ {
 
     /**
      * <p>Java class for anonymous complex type.
-     * 
+     *
      * <p>The following schema fragment specifies the expected content contained within this class.
-     * 
+     *
      * <pre>
      * &lt;complexType>
      *   &lt;simpleContent>
@@ -7832,29 +7832,29 @@ public class OTAHotelResRQ {
      *   &lt;/simpleContent>
      * &lt;/complexType>
      * </pre>
-     * 
-     * 
+     *
+     *
      */
     @XmlAccessorType(XmlAccessType.FIELD)
     @XmlType(name = "", propOrder = {
-        "value"
+            "value"
     })
     public static class UniqueID {
 
         @XmlValue
         protected String value;
         @XmlAttribute(name = "ID")
-        protected Integer id;
+        protected String id;
         @XmlAttribute(name = "Type")
-        protected Short type;
+        protected String type;
 
         /**
          * Gets the value of the value property.
-         * 
+         *
          * @return
          *     possible object is
          *     {@link String }
-         *     
+         *
          */
         public String getValue() {
             return value;
@@ -7862,11 +7862,11 @@ public class OTAHotelResRQ {
 
         /**
          * Sets the value of the value property.
-         * 
+         *
          * @param value
          *     allowed object is
          *     {@link String }
-         *     
+         *
          */
         public void setValue(String value) {
             this.value = value;
@@ -7874,52 +7874,50 @@ public class OTAHotelResRQ {
 
         /**
          * Gets the value of the id property.
-         * 
+         *
          * @return
          *     possible object is
-         *     {@link Integer }
-         *     
+         *     {@link String }
+         *
          */
-        public Integer getID() {
+        public String getID() {
             return id;
         }
 
         /**
          * Sets the value of the id property.
-         * 
+         *
          * @param value
          *     allowed object is
-         *     {@link Integer }
-         *     
+         *     {@link String }
+         *
          */
-        public void setID(Integer value) {
+        public void setID(String value) {
             this.id = value;
         }
 
         /**
          * Gets the value of the type property.
-         * 
+         *
          * @return
          *     possible object is
-         *     {@link Short }
-         *     
+         *     {@link String }
+         *
          */
-        public Short getType() {
+        public String getType() {
             return type;
         }
 
         /**
          * Sets the value of the type property.
-         * 
+         *
          * @param value
          *     allowed object is
-         *     {@link Short }
-         *     
+         *     {@link String }
+         *
          */
-        public void setType(Short value) {
+        public void setType(String value) {
             this.type = value;
         }
-
     }
-
 }

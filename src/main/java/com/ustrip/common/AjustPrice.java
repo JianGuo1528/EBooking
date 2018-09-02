@@ -1,5 +1,6 @@
 package com.ustrip.common;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 import org.apache.logging.log4j.LogManager;
@@ -61,7 +62,7 @@ public class AjustPrice {
 			throw e;
 		}
     }
-	
+
 	public static double getBeforeTaxPrice(double netPrice) throws Exception
     {
     	try {
@@ -74,4 +75,10 @@ public class AjustPrice {
 			throw e;
 		}
     }
+
+    public static double getTax(double price) throws Exception {
+		BigDecimal bd = new BigDecimal(price - (price / 1.15));
+		BigDecimal tax = bd.setScale(2, BigDecimal.ROUND_HALF_DOWN);
+		return tax.doubleValue();
+	}
 }

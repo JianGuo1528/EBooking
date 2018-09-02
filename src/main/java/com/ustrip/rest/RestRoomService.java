@@ -82,11 +82,12 @@ public class RestRoomService {
 	@Produces("application/json;charset=UTF-8")
 	public Response addHotelRoomTypeBySelect() throws Exception {
 		JSONObject jsonData = RequestData.getJSONData();
-		myMiniExceptionER1001(jsonData, new String[] {"hotelId", "roomTypeId"});
+		myMiniExceptionER1001(jsonData, new String[] {"hotelId", "roomTypeId", "bedTypeId"});
  
 		Map<String, Object> m = new HashMap<String, Object>();
 		m.put("hotelId", jsonData.get("hotelId").toString());
 		m.put("roomTypeId", jsonData.get("roomTypeId").toString());
+		m.put("bedTypeId", jsonData.get("bedTypeId").toString());
 		Integer sum = roomService.selectCountByRoomTypeIdAndHotelId(m);
 		if(sum > 0) {
 			throw new MiniException(UsiTripConstant.ERRORCODE_ER1001, ErrorCodeEnum.ER1001.getMsg() +" It has already existed.");
@@ -101,7 +102,7 @@ public class RestRoomService {
 	@Produces("application/json;charset=UTF-8")
 	public Response addHotelRoomTypeByInput() throws Exception {
 		JSONObject jsonData = RequestData.getJSONData();
-		myMiniExceptionER1001(jsonData, new String[] {"hotelId", "roomTypeName"});
+		myMiniExceptionER1001(jsonData, new String[] {"hotelId", "roomTypeName", "bedTypeId"});
 		
 		Dict dict = new Dict();
 		dict.setHotelId(Integer.valueOf(jsonData.get("hotelId").toString()));
@@ -115,6 +116,7 @@ public class RestRoomService {
 		m.put("hotelId", dict.getHotelId());
 		m.put("roomTypeName", dict.getTypeName());
 	    m.put("roomTypeId", roomTypeIdOrcount);
+	    m.put("bedTypeId", jsonData.get("bedTypeId").toString());
 	    Integer count = roomService.addMappingByHotelAndRoomType(m);
 	    
 	    Map<String, Object> mapp = returnMap(count);
@@ -186,18 +188,18 @@ public class RestRoomService {
 		}
  	}
 	
-	
+	/*
     @POST
     @Path("/pushRoomTypeByHotelId")
     @Produces("application/json;charset=utf-8")
-    public Response pushRoomTypeByHotelId() {
+    public AliDynamicResponse pushRoomTypeByHotelId() {
     	try {
     		JSONObject jsonData = RequestData.getJSONData();
     		if(jsonData.isNull("hotelId") || jsonData.get("hotelId") == null) {
     			throw new MiniException(UsiTripConstant.ERRORCODE_ER1001, ErrorCodeEnum.ER1001.getMsg() +" HOTEL ID cannot be empty.");
     		}
     		List<Map<String, Object>> hotelList = new ArrayList<>();
-    		
+
     		Object obj = jsonData.get("hotelId");
     		if (obj instanceof JSONArray) {
     			JSONArray hotelIds = jsonData.getJSONArray("hotelId");
@@ -215,99 +217,99 @@ public class RestRoomService {
 
     		List<Map<String, Object>> roomTypes = roomService.queryRoomTypes(hotelList);
     		logger.info("roomTypes======="+roomTypes);
-    		
+
      		Map<String, String> resMap = new HashMap<>();
     		for (Map<String, Object> map : roomTypes) {
-    			
+
     			//通过酒店id,房型Id，表为plan表（可用的plan） 查询出一条床型
     			//通过床型Id 到map_bed_cbed 查询多条床型
     			List<Map<String, Object>> listBedType = roomService.queryBedListByHotelIdAndRoomTypeId(map);
     			map.put("listBedType", listBedType);
-    			
+
     			resMap = MyPostMethod(roomTypePostUrl, pushRoomTypeStr(map));
     			if(!"200".equals(resMap.get("Code"))) {
-    	    		return Response.status(Status.BAD_REQUEST).entity(resMap).build();
-    			} 
+    	    		return AliDynamicResponse.status(Status.BAD_REQUEST).entity(resMap).build();
+    			}
 			}
-    		return Response.status(Status.OK).entity(resMap).build();
+    		return AliDynamicResponse.status(Status.OK).entity(resMap).build();
     	} catch (Exception e) {
     		throw new MiniException(UsiTripConstant.ERRORCODE_ER1001, ErrorCodeEnum.ER1001.getMsg());
     	}
     }
-    
+
     public static final String roomTypePostUrl= "http://vendor-ctrip.fws.ctripqa.com/Hotel/OTAReceive/HotelStaticInfoService.asmx";
-    
+
     public String pushRoomTypeStr(Map<String, Object> map) {
-    	
-    	String soapRequestData = 
-    			"<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n" + 
-    					"    <soap:Body>\r\n" + 
-    					"        <OTA_HotelInvNotifRQ TimeStamp=\"0001-01-01T00:00:00\" Target=\"Test\" Version=\"1.0\" PrimaryLangID=\"zh-cn\" xmlns=\"http://www.opentravel.org/OTA/2003/05\">\r\n" + 
-    					"  <POS>\r\n" + 
-    					"    <Source>\r\n" + 
-    					"      <RequestorID Type=\"1\" ID=\"jtbtest\" MessagePassword=\"jtbtest\">\r\n" + 
-    					"        <CompanyName Code=\"C\" CodeContext=\"10029\" />\r\n" + 
-    					"      </RequestorID>\r\n" + 
-    					"    </Source>\r\n" + 
-    					"  </POS>\r\n" + 
-    					"  <SellableProducts HotelCode=\""+map.get("hotelId")+"\" HotelName=\"\">\r\n" + 
-    					"    <SellableProduct InvStatusType=\"Active\" InvTypeCode=\""+map.get("room_type_id")+"\">\r\n" + 
-    					"      <GuestRoom>\r\n" + 
-    					"        <Occupancy MinOccupancy=\"1\" MaxOccupancy=\"3\" AgeQualifyingCode=\"10\" />\r\n" + 
-    					"        <Occupancy MinOccupancy=\"1\" MaxOccupancy=\"1\" AgeQualifyingCode=\"8\" />\r\n" + 
-    					"        <Room RoomTypeCode=\""+map.get("ctrip_code")+"\"  NonSmoking=\"true\"  />\r\n" + 
-    					"        <Amenities></Amenities>\r\n" + 
-    					"        <TPA_Extensions>\r\n" + 
-    					"          <Equipments></Equipments>\r\n" + 
-    		    		
+
+    	String soapRequestData =
+    			"<soap:Envelope xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n" +
+    					"    <soap:Body>\r\n" +
+    					"        <OTA_HotelInvNotifRQ TimeStamp=\"0001-01-01T00:00:00\" Target=\"Test\" Version=\"1.0\" PrimaryLangID=\"zh-cn\" xmlns=\"http://www.opentravel.org/OTA/2003/05\">\r\n" +
+    					"  <POS>\r\n" +
+    					"    <Source>\r\n" +
+    					"      <RequestorID Type=\"1\" ID=\"jtbtest\" MessagePassword=\"jtbtest\">\r\n" +
+    					"        <CompanyName Code=\"C\" CodeContext=\"10029\" />\r\n" +
+    					"      </RequestorID>\r\n" +
+    					"    </Source>\r\n" +
+    					"  </POS>\r\n" +
+    					"  <SellableProducts HotelCode=\""+map.get("hotelId")+"\" HotelName=\"\">\r\n" +
+    					"    <SellableProduct InvStatusType=\"Active\" InvTypeCode=\""+map.get("room_type_id")+"\">\r\n" +
+    					"      <GuestRoom>\r\n" +
+    					"        <Occupancy MinOccupancy=\"1\" MaxOccupancy=\"3\" AgeQualifyingCode=\"10\" />\r\n" +
+    					"        <Occupancy MinOccupancy=\"1\" MaxOccupancy=\"1\" AgeQualifyingCode=\"8\" />\r\n" +
+    					"        <Room RoomTypeCode=\""+map.get("ctrip_code")+"\"  NonSmoking=\"true\"  />\r\n" +
+    					"        <Amenities></Amenities>\r\n" +
+    					"        <TPA_Extensions>\r\n" +
+    					"          <Equipments></Equipments>\r\n" +
+
     					"          <BedTypes>\r\n";
     								List<Map<String, Object>>  listBedType = (List<Map<String, Object>>) map.get("listBedType");
 									for (Map<String, Object> m : listBedType) {
 										soapRequestData+= "            <BedType BedTypeCode=\""+m.get("code")+"\" Quantity=\""+m.get("quantity")+"\" CategoryCode=\""+m.get("category_code")+"\" />\r\n";
 									}
-						soapRequestData+=	    
+						soapRequestData+=
 						"          </BedTypes>\r\n" +
-    		    		
-    					"        </TPA_Extensions>\r\n" + 
-    					"        <Currency Code=\"USD\" />\r\n" + 
-    					"        <Description>\r\n" + 
-    					"          <Text Language=\"zh-cn\">"+map.get("room_type_name_zh")+"</Text>\r\n" + 
-    					"          <Text Language=\"en-us\">"+map.get("room_type_name")+"</Text>\r\n" + 
-    					"        </Description>\r\n" + 
-    					"        <LongDescription></LongDescription>" + 
-    					"        <ImageItems></ImageItems>" + 
-    					"      </GuestRoom>\r\n" + 
-    					"    </SellableProduct>\r\n" + 
-    					"  </SellableProducts>\r\n" + 
-    					"</OTA_HotelInvNotifRQ>\r\n" + 
-    					"    </soap:Body>\r\n" + 
+
+    					"        </TPA_Extensions>\r\n" +
+    					"        <Currency Code=\"USD\" />\r\n" +
+    					"        <Description>\r\n" +
+    					"          <Text Language=\"zh-cn\">"+map.get("room_type_name_zh")+"</Text>\r\n" +
+    					"          <Text Language=\"en-us\">"+map.get("room_type_name")+"</Text>\r\n" +
+    					"        </Description>\r\n" +
+    					"        <LongDescription></LongDescription>" +
+    					"        <ImageItems></ImageItems>" +
+    					"      </GuestRoom>\r\n" +
+    					"    </SellableProduct>\r\n" +
+    					"  </SellableProducts>\r\n" +
+    					"</OTA_HotelInvNotifRQ>\r\n" +
+    					"    </soap:Body>\r\n" +
     					"</soap:Envelope>";
 
 		return soapRequestData;
     }
-    
-    
+
+
     public Map<String, String> MyPostMethod(String url,String soapRequestData) {
         logger.info("soapRequestData====="+soapRequestData);
 
-        try {     
-            PostMethod postmethod = new PostMethod(url);     
-            byte[] b = soapRequestData.getBytes("UTF-8");     
-            InputStream is = new ByteArrayInputStream(b, 0, b.length);     
-            RequestEntity re = new InputStreamRequestEntity(is, b.length,"application/xop+xml; charset=UTF-8; type=\"text/xml\"");     
-            postmethod.setRequestEntity(re);     
-            HttpClient httpClient = new HttpClient();     
+        try {
+            PostMethod postmethod = new PostMethod(url);
+            byte[] b = soapRequestData.getBytes("UTF-8");
+            InputStream is = new ByteArrayInputStream(b, 0, b.length);
+            RequestEntity re = new InputStreamRequestEntity(is, b.length,"application/xop+xml; charset=UTF-8; type=\"text/xml\"");
+            postmethod.setRequestEntity(re);
+            HttpClient httpClient = new HttpClient();
             int statusCode = httpClient.executeMethod(postmethod);
-            String soapResponseData = postmethod.getResponseBodyAsString();     
+            String soapResponseData = postmethod.getResponseBodyAsString();
             logger.info("soapResponseData====="+soapResponseData);
             return parse(soapResponseData);
-        } catch (Exception ex) {     
-            ex.printStackTrace();     
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
-		return null;    
+		return null;
     }
-    
-	
+
+
 	public Map<String, String> parse(String soap) {
 		Map<String, String> map = new HashMap<String, String>();
 		try {
@@ -334,5 +336,5 @@ public class RestRoomService {
 		}
 		return map;
 	}
-    
+    */
 }

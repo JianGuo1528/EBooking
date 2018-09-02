@@ -1,5 +1,7 @@
 package com.ustrip.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +20,4 @@ public interface OrderDao {
 	public Integer rejectOrder(Map<String, Object> map);
 
 	public List<Map<String, Object>> queryRejectedOrder(List<Map<String, Object>> listRejections);
-
- 
 }

@@ -1,6 +1,7 @@
 package com.ustrip.entity;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Hotel {
 	private int hotelId;
@@ -65,6 +66,16 @@ public class Hotel {
 
 	public void setCountry(Country country) {
 		this.country = country;
+	}
+
+	private Set<Plan> plan;
+
+	public Set<Plan> getPlan() {
+		return plan;
+	}
+
+	public void setPlan(Set<Plan> plan) {
+		this.plan = plan;
 	}
 
 	public String getState() {

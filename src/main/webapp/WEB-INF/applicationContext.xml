@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+         http://www.springframework.org/schema/aop
+         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <context:component-scan base-package="com.ustrip.impl" />
+    <context:component-scan base-package="com.ustrip.rest" />
+    <context:component-scan base-package="com.ustrip.ctrip" />
+    <context:component-scan base-package="com.ustrip.alitrip" />
+    <context:component-scan base-package="com.ustrip.delegate" />
+    <context:component-scan base-package="com.ustrip.controller.hotelAPI.lib.provider" />
+    <context:component-scan base-package="com.ustrip.controller.hotelAPI.lib.innstant" />
+
+    <import resource ="dataSource.xml" />
+    <bean id ="transactionManager"
+          class ="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name ="dataSource" ref ="writeDataSource" />
+    </bean>
+    <tx:annotation-driven />
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="readDataSource" />
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
+        <property name="mapperLocations" value="classpath*:mappers/*Dao.xml"></property>
+    </bean>
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ustrip.dao" />
+    </bean>
+
+
+    <bean id="checkAuthAspect" class="com.ustrip.common.CheckAuthAspect" />
+    <bean id="checkAuthAspectCtrip" class="com.ustrip.common.CheckAuthAspectCtrip" />
+    <tx:advice id="userTxAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="transaction*" propagation="REQUIRED" read-only="false"
+                       rollback-for="java.lang.RuntimeException" />
+        </tx:attributes>
+    </tx:advice>
+    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <bean id="dataSourceAspect" class="com.ustrip.common.DataSourceAspect" />
+    <aop:config>
+        <aop:advisor order="4" pointcut-ref="delegate" advice-ref="userTxAdvice" />
+        <aop:aspect id="c" order="3" ref="dataSourceAspect">
+            <aop:pointcut id="delegate"
+                          expression="execution(* com.ustrip.delegate.TransactionDelegate.*(..))" />
+            <aop:before pointcut-ref="delegate" method="before" />
+            <aop:after pointcut-ref="delegate" method="after" />
+        </aop:aspect>
+        <aop:aspect id="b" order="2" ref="checkAuthAspectCtrip">
+            <aop:pointcut id="checkAuthCtrip"
+                          expression="execution(* com.ustrip.ctrip..*(..))" />
+            <aop:before pointcut-ref="checkAuthCtrip" method="before" />
+            <aop:after-returning returning="returnVal" pointcut-ref="checkAuthCtrip" method="log" />
+        </aop:aspect>
+        <aop:aspect id="a" order="1" ref="checkAuthAspect">
+            <aop:pointcut id="checkAuth"
+                          expression="!execution(* com.ustrip.rest.RestUserService.login(..))&amp;&amp;
+							!execution(* com.ustrip.rest.RestUserService.logout(..))&amp;&amp;
+							!execution(* com.ustrip.rest.RestUserService.retrievePassword(..))&amp;&amp;
+							!execution(* com.ustrip.rest.RestUserService.updatePasswordByToken(..))&amp;&amp;
+							execution(* com.ustrip.rest..*(..))" />
+            <aop:before pointcut-ref="checkAuth" method="before" />
+            <aop:after-returning returning="returnVal" pointcut-ref="checkAuth" method="log" />
+        </aop:aspect>
+    </aop:config>
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="usePool" value="true"></property>
+        <property name="hostName" value="54.190.254.169" />
+        <property name="port" value="6379" />
+        <property name="password" value="Fengyue1985!" />
+        <property name="timeout" value="100000" />
+        <constructor-arg index="0" ref="jedisPoolConfig" />
+    </bean>
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="300" />
+        <property name="maxIdle" value="100" />
+        <property name="maxWaitMillis" value="10000" />
+    </bean>
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+    </bean>
+    <bean id="applicationContextProvder" class="com.ustrip.delegate.ApplicationContextProvider"/>
+</beans>

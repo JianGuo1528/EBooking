@@ -18,8 +18,8 @@ import com.alibaba.fastjson.JSON;
 
 public class PostBackend {
 
-    private final static String USERNAME = "arthur.test@gmail.com";
-    private final static String PASSWORD = "gJPZXA2NqMGv7m8CF3Gk5GBfl2DQQvb7";
+    private final static String USERNAME = UsiTripConstant.CTRIPBOOKUSERNAME;
+    private final static String PASSWORD = UsiTripConstant.CTRIPBOOKPWD;
 
     @SuppressWarnings("unchecked")
     public static String sendJsonHttpPost(String url, String json) {
@@ -93,49 +93,5 @@ public class PostBackend {
         }
         return responseInfo;
 
-    }
-
-    public static void main(String[] args) {
-        Map map = new HashMap();
-        map.put("orderReference", "5ae6764a7f7f493d8e6d8f637170b5c0");
-
-        String reply = sendJsonHttpPost("http://api3.usitrip.com:8080/backend-test/hotels/book", "{\n" +
-                "    \"ipAddress\": \"1.1.1.1\",\n" +
-                "    \"booker\": {\n" +
-                "        \"firstname\": \"Albert\",\n" +
-                "        \"lastname\": \"Zhang\",\n" +
-                "        \"email\": \"ctriphotelreshk@ctrip.com\",\n" +
-                "        \"phone\": \"8665066224\"\n" +
-                "    },\n" +
-                "    \"clientReference\": \"Ctrip\",\n" +
-                "    \"rooms\": [\n" +
-                "        {\n" +
-                "            \"roomReference\": \"eb:bb80e86f32ec4e3e99068dae1426ee0f\",\n" +
-                "            \"paxes\": [\n" +
-                "                {\n" +
-                "                    \"type\": \"AD\",\n" +
-                "                    \"name\": \"Albert\",\n" +
-                "                    \"surname\": \"Zhang\"\n" +
-                "                },\n" +
-                "                {\n" +
-                "                    \"type\": \"AD\",\n" +
-                "                    \"name\": \"Brant\",\n" +
-                "                    \"surname\": \"Huang\"\n" +
-                "                },\n" +
-                "                {\n" +
-                "                    \"type\": \"AD\",\n" +
-                "                    \"name\": \"Bruce\",\n" +
-                "                    \"surname\": \"Huang\"\n" +
-                "                },\n" +
-                "                {\n" +
-                "                    \"type\": \"AD\",\n" +
-                "                    \"name\": \"Hugo\",\n" +
-                "                    \"surname\": \"Lin\"\n" +
-                "                }\n" +
-                "            ]\n" +
-                "        }\n" +
-                "    ]\n" +
-                "}");
-        System.out.println("reply->" + reply);
     }
 }

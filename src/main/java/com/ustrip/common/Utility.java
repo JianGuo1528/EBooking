@@ -1,9 +1,19 @@
 package com.ustrip.common;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
+
+import javax.crypto.Mac;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,6 +21,83 @@ import org.json.JSONArray;
 
 public class Utility {
 	private static Logger logger = LogManager.getLogger(Utility.class);
+	
+    public static void checkAuth(String echoToken, String id, String pass) throws Exception{
+//        if (!(UsiTripConstant.ALITRIP_ID.equals(id) && UsiTripConstant.ALITRIP_PASS.equals(pass))) {
+//            throw new MiniException(UsiTripConstant.ERRORCODE_ER1003, ErrorCodeEnum.ER1003.getMsg());
+//        }
+    }
+
+    public static String signTopRequest(Map<String, String> params, String secret, String signMethod) throws IOException {
+        // Step1: Sort
+        String[] keys = params.keySet().toArray(new String[0]);
+        Arrays.sort(keys);
+      
+        // Step2: Assemble
+        StringBuilder query = new StringBuilder();
+        if ("md5".equals(signMethod)) {
+            query.append(secret);
+        }
+        for (String key : keys) {
+            String value = params.get(key);
+            if (value!=null && !"".equals(value)) {
+                query.append(key).append(value);
+            }
+        }
+      
+        // Step3: Sign MD5/HMAC
+        byte[] bytes;
+        if ("hmac".equals(signMethod)) {
+            bytes = encryptHMAC(query.toString(), secret);
+        } else {
+            query.append(secret);
+            bytes = encryptMD5(query.toString());
+        }
+      
+        // Step4: Convert to Hex
+        return byte2hex(bytes);
+    }
+      
+    public static byte[] encryptHMAC(String data, String secret) throws IOException {
+        byte[] bytes = null;
+        try {
+            SecretKey secretKey = new SecretKeySpec(secret.getBytes("utf-8"), "HmacMD5");
+            Mac mac = Mac.getInstance(secretKey.getAlgorithm());
+            mac.init(secretKey);
+            bytes = mac.doFinal(data.getBytes("utf-8"));
+        } catch (GeneralSecurityException gse) {
+            throw new IOException(gse.toString());
+        }
+        return bytes;
+    }
+      
+    public static byte[] encryptMD5(String data) throws IOException {
+        //return encryptMD5(data.getBytes("utf-8"));
+        byte[] bytesOfMessage = data.getBytes("UTF-8");
+        byte[] thedigest = null;
+        MessageDigest md;
+		try {
+			md = MessageDigest.getInstance("MD5");
+	        thedigest = md.digest(bytesOfMessage);
+		} catch (NoSuchAlgorithmException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return thedigest;
+    }
+      
+    public static String byte2hex(byte[] bytes) {
+        StringBuilder sign = new StringBuilder();
+        for (int i = 0; i < bytes.length; i++) {
+            String hex = Integer.toHexString(bytes[i] & 0xFF);
+            if (hex.length() == 1) {
+                sign.append("0");
+            }
+            sign.append(hex.toUpperCase());
+        }
+        return sign.toString();
+    }
+	
 	public boolean contains(JSONArray jsonArray, Object obj){
 //		System.out.println("HD_test contains");
 //		return true;

@@ -1,22 +1,30 @@
 package com.ustrip.common;
 
 import com.ustrip.common.CtripException;
+import com.ustrip.delegate.CtripServiceDelegate;
+
+import jdk.internal.org.xml.sax.InputSource;
+
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.InputStreamRequestEntity;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.methods.RequestEntity;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.w3c.dom.bootstrap.DOMImplementationRegistry;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
 
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.soap.*;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+
+import java.io.*;
 import java.net.URL;
 
 public class CtripUtils {
     private static HttpClient httpClient = new HttpClient();
     private static SOAPConnection connection;
-
+    private static Logger logger = LogManager.getLogger(CtripUtils.class.getName());
     static {
         try {
             connection = SOAPConnectionFactory.newInstance().createConnection();
@@ -26,19 +34,21 @@ public class CtripUtils {
     }
 
     public static String getSoapBody(String soapMessage) {
-        String bodyTag = "<soap:Body>";
-        int index = soapMessage.indexOf(bodyTag);
+        String startingTag = "<SOAP-ENV:Body>";
+        String endingTag = "</SOAP-ENV:Body>";
+        int index = soapMessage.indexOf(startingTag);
         if (index >= 0) {
-            return soapMessage.substring(index + bodyTag.length() + 1, soapMessage.lastIndexOf("</soap:Body>")).trim();
-        }else {
+            return soapMessage.substring(index + startingTag.length(), soapMessage.lastIndexOf(endingTag)).trim();
+        } else {
             return soapMessage;
         }
     }
 
     public static void checkAuth(String category, String echoToken, String id, String pass) {
-        if (UsiTripConstant.CTRIP_ID.equals(id) && UsiTripConstant.CTRIP_PASS.equals(pass)) {
+        if (UsiTripConstant.CTRIP_REQ_ID.equals(id) && UsiTripConstant.CTRIP_REQ_PASS.equals(pass)) {
 
         } else {
+        	logger.fatal("id:"+id+"/pass:"+pass);
             throw new CtripException(category, echoToken, "9", "497", "Authorization error.");
         }
     }
@@ -55,7 +65,7 @@ public class CtripUtils {
         while (statusCode != 200 && time++ <= 3) {
             statusCode = httpClient.executeMethod(postmethod);
         }
-        System.out.println("statuscode=" + statusCode);
+        System.out.println("statuscode = " + statusCode);
         return postmethod.getResponseBodyAsString();
     }
 

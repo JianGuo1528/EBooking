@@ -1,6 +1,8 @@
 package com.ustrip.dao;
 
 import com.ustrip.entity.Porder;
+import com.ustrip.entity.PorderRoom;
+
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -28,5 +30,9 @@ public interface PorderDao
 	int updatePlanAvailabilityCancel(@Param("list") List<Map<String, Object>> list);
 
 	Porder selectOrderById(@Param("id") Integer id);
+	List<Map<String, Object>> selectOrderForDealer(Map<String, Object> map);
+	List<PorderRoom> selectPorderRoomsByOrderReference(@Param("orderReference")String orderReference);
+
+	public List<Map<String, Object>> selectEmailDataByOrderId(String id);
 }
 

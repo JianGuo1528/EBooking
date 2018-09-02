@@ -23,6 +23,23 @@
         <result column="cancellable" jdbcType="TINYINT" property="cancellable"/>
     </resultMap>
 
+	<resultMap id="PorderRoomResultMap" type="com.ustrip.entity.PorderRoom">
+	    <id column="id" jdbcType="INTEGER" property="id" />
+	    <result column="roomId" jdbcType="INTEGER" property="roomId" />
+	     <result column="orderReference" jdbcType="VARCHAR" property="orderReference" />
+	     <result column="quantity" jdbcType="INTEGER" property="quantity" />
+	     <result column="name" jdbcType="VARCHAR" property="name" />
+	     <result column="cancelAmount" jdbcType="DOUBLE" property="cancelAmount" />
+	     <result column="cancelPolicies" jdbcType="VARCHAR" property="cancelPolicies" />
+	     <result column="paymentType" jdbcType="VARCHAR" property="paymentType" />
+	      <result column="boardName" jdbcType="VARCHAR" property="boardName" />
+	      <result column="netPrice" jdbcType="DOUBLE" property="netPrice" />
+	      <result column="supplier" jdbcType="VARCHAR" property="supplier" />
+	      <result column="supplierReference" jdbcType="VARCHAR" property="supplierReference" />
+	      <result column="comments" jdbcType="VARCHAR" property="comments" />
+	    <result column="created_at" jdbcType="DATE" property="createdAt" />
+	</resultMap>
+
     <select id="selectPorders" parameterType="map" resultMap="PorderResultMap">
       select * from porder
     </select>
@@ -49,10 +66,12 @@
                  separator=";">
             update eb_plan_detail set
             <if test='item.conType == 1'>
+            	push_status = 0,
                 contract_available_amount = contract_available_amount-#{item.roomNumber, jdbcType=INTEGER},
                 contract_sold_amount = contract_sold_amount+#{item.roomNumber, jdbcType=INTEGER}
             </if>
             <if test='item.conType == 2'>
+            	push_status = 0,
                 supplement_available_amount = supplement_available_amount-#{item.roomNumber, jdbcType=INTEGER},
                 supplement_sold_amount = supplement_sold_amount+#{item.roomNumber, jdbcType=INTEGER}
             </if>
@@ -66,10 +85,12 @@
                  separator=";">
             update eb_plan_detail set
             <if test='item.conType == 1'>
+            	push_status = 0,
                 contract_available_amount = contract_available_amount+#{item.roomNumber, jdbcType=INTEGER},
                 contract_sold_amount = contract_sold_amount-#{item.roomNumber, jdbcType=INTEGER}
             </if>
             <if test='item.conType == 2'>
+            	push_status = 0,
                 supplement_available_amount = supplement_available_amount+#{item.roomNumber, jdbcType=INTEGER},
                 supplement_sold_amount = supplement_sold_amount-#{item.roomNumber, jdbcType=INTEGER}
             </if>
@@ -85,4 +106,33 @@
         where id = #{id}
     </select>
 
+    <select id="selectOrderForDealer" parameterType="map" resultType="java.util.Map">
+        select
+          p.*,h.address,h.desId
+        from porder p,hotel h
+        where p.hotelId=h.hotelId 
+        and (p.id = #{id} or p.orderCReference = #{cref})
+    </select>
+
+	<select id="selectPorderRoomsByOrderReference" parameterType="map" resultMap="PorderRoomResultMap">
+	    select *
+	    from porder_room as p where p.orderReference=#{orderReference} 
+	</select>
+
+    <select id="selectEmailDataByOrderId" parameterType="string" resultType="java.util.Map">
+        SELECT
+            porder.id orderId,
+            porder.hotelName hotelName,
+            porder.checkinDate checkin,
+            porder.checkoutDate checkout,
+            eb_user.email toMail
+        FROM
+            porder,
+            eb_hotel_user,
+            eb_user
+        WHERE
+            porder.id = #{id}
+        AND porder.hotelID = eb_hotel_user.hotelID
+        AND eb_hotel_user.user_id = eb_user.user_id
+    </select>
 </mapper>

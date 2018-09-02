@@ -537,7 +537,7 @@ public class OTAHotelStatsNotifRQ {
                     @XmlAttribute(name = "Code")
                     protected String code;
                     @XmlAttribute(name = "CodeContext")
-                    protected Short codeContext;
+                    protected String codeContext;
 
                     /**
                      * Gets the value of the value property.
@@ -583,9 +583,9 @@ public class OTAHotelStatsNotifRQ {
                      * Gets the value of the codeContext property.
                      *
                      * @return possible object is
-                     * {@link Short }
+                     * {@link String }
                      */
-                    public Short getCodeContext() {
+                    public String getCodeContext() {
                         return codeContext;
                     }
 
@@ -593,9 +593,9 @@ public class OTAHotelStatsNotifRQ {
                      * Sets the value of the codeContext property.
                      *
                      * @param value allowed object is
-                     *              {@link Short }
+                     *              {@link String }
                      */
-                    public void setCodeContext(Short value) {
+                    public void setCodeContext(String value) {
                         this.codeContext = value;
                     }
 

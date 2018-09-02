@@ -1,156 +1,178 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.ustrip.dao.OrderDao">  
- 
-<sql id="orderQueryInfo">
-	     SELECT
-			  porder.id ,  porder.partnerId,  porder.provider,  porder.orderReference,  porder.ip_address ipAddress,  porder.orderPReference,  porder.cancellationReference,
-			  porder.hotelId,  hotelName, hotelName_zh,  bookerFirstName,  bookerLastName,  bookerEmail,  bookerPhone, 
-			  porder.checkinDate,  porder.checkoutDate, porder.totalPrice, porder.totalOriginalNetPrice, porder.status, porder.currencyCode,  porder.code, CONCAT("/voucher/",porder.CODE) urlCode,
-			  DATE_FORMAT(porder.created_at,'%Y-%m-%d %h:%i:%s') createdAt,  
-			  DATE_FORMAT(porder.updated_at,'%Y-%m-%d %h:%i:%s') updatedAt,  
-			  payment_type paymentType, payment_status paymentStatus, remark, source,  isChecked, isPayed,  
-			  isBanked, day_number dayNumber,  room_number roomNumber,  special_request specialRequest,  
-			  finance_remark financeRemark,   channel_remark channelRemark,user_email userEmail,sales_no salesNo, isConfirm_eb isConfirmEB,
-		  	  CONCAT('http://hotels.usitrip.com/hotel/',porder.hotelId,'.html') 'hotelUrl',
-			  CONCAT('https://s3-us-west-1.amazonaws.com/usitrip/Hotel_Image/',hotel.thumbnail) 'hotelImgUrl',
-			  (select name from porder_room where porder.orderReference = porder_room.orderReference limit 1) roomType
-		FROM porder
-		INNER JOIN hotel on porder.hotelId = hotel.hotelId
-		<include refid="orderWhereInfo"></include>
-</sql> 
- 
- <sql id="orderWhereInfo">
- 		WHERE porder.provider = 'EBOOKING'
-        <if test="creationStartTime != null and creationStartTime != ''"> and  porder.created_at >=  #{creationStartTime} </if>  
-        <if test="creationEndTime != null and creationEndTime != ''">   <![CDATA[ and  porder.created_at  <= #{creationEndTime} ]]> </if>  
-        <if test="checkinStartDate != null and checkinStartDate != ''"> and  porder.checkinDate >= DATE_FORMAT(#{checkinStartDate},'%Y-%m-%d') </if>  
-        <if test="checkinEndDate != null and checkinEndDate != ''">   <![CDATA[ and  porder.checkinDate  <= DATE_FORMAT(#{checkinEndDate},'%Y-%m-%d') ]]> </if>  
-        <if test="checkoutStartDate != null and checkoutStartDate != ''"> and  porder.checkoutDate >= DATE_FORMAT(#{checkoutStartDate},'%Y-%m-%d') </if>  
-        <if test="checkoutEndDate != null and checkoutEndDate != ''">   <![CDATA[ and  porder.checkoutDate  <=  DATE_FORMAT(#{checkoutEndDate},'%Y-%m-%d') ]]> </if>  
-        <if test="bookerName != null and bookerName != ''"> and ( porder.bookerFirstName like CONCAT('%', #{bookerName}, '%')  or porder.bookerLastName  like CONCAT('%', #{bookerName}, '%') ) </if>  
-        <if test="bookerEmail != null and bookerEmail != ''"> and  porder.bookerEmail =  #{bookerEmail} </if>  
-        <if test="bookerPhone != null and bookerPhone != ''"> and  porder.bookerPhone =  #{bookerPhone} </if>  
-        <if test="status != null and status != ''"> and  porder.status =  #{status} </if>  
-        <if test="isConfirmEB != null and isConfirmEB != ''"> and  porder.isConfirm_eb =  #{isConfirmEB} </if>  
-        <if test="dayNumber != null and dayNumber != ''"> and  porder.day_number =  #{dayNumber} </if>  
-        <if test="roomNumber != null and roomNumber != ''"> and  porder.room_number =  #{roomNumber} </if>  
-        <if test="hotelName != null and hotelName != '' "> and (  porder.hotelName like CONCAT('%', #{hotelName}, '%')  or porder.hotelName_zh like CONCAT('%', #{hotelName}, '%') ) </if>  
-        <if test="orderReference != null and orderReference != ''"> and  porder.orderReference =  #{orderReference} </if>  
-        <if test="id != null and id != ''"> and  porder.id =  #{id} </if>  
-		
-		<choose>
-		
-			<when test="flag == 'queryOrder'">
-		        <if test="currencyCode != null and currencyCode != ''"> and  porder.currencyCode =  #{currencyCode} </if>  
-		        <if test="paymentType != null and paymentType != ''"> and  porder.payment_type =  #{paymentType} </if>  
-		        <if test="paymentStatus != null and paymentStatus != ''"> and  porder.payment_status =  #{paymentStatus} </if>  
-		        <if test="source != null and source != ''"> and  porder.source =  #{source} </if>  
-		        <if test="userEmail != null and userEmail != ''"> and  porder.user_email =  #{userEmail} </if>  
-		        <if test="salesNo != null and salesNo != ''"> and  porder.sales_no =  #{salesNo} </if>  
-		        <if test="orderPReference != null and orderPReference != ''"> and  porder.orderPReference =  #{orderPReference} </if>  
-			</when>
-			
-			<when test="flag == 'queryOrderByUserId'">
-				   and  porder.hotelId in (select hotelId from eb_hotel_user where user_id = #{userId})   
-			</when>
-			
-			<when test="flag == 'queryOrderByHotelId'">
-				  and  porder.hotelId = #{hotelId}
-			</when>
-			
-			<when test="flag == 'queryOrderByID'">
-				  and  porder.id = #{id}
-			</when>
-			
-			<when test="flag == 'queryOrderByReference'">
-		          and  porder.orderReference =  #{orderReference}   
-			</when>
-			
-			<when test="flag == 'queryOrderByUserEmail'">
-		          and  porder.user_email =  #{userEmail}   
-			</when>
-		</choose>
-	
-</sql>
+<mapper namespace="com.ustrip.dao.OrderDao">
 
-<select id="queryOrder" parameterType="map" resultType="java.util.Map">
-	<include refid="orderQueryInfo"></include>
-    <choose>
-    	<when test="sort != null and sort != ''"> order by ${sort} </when>
-    	<otherwise> order by createdAt desc </otherwise>
-    </choose>
-</select>
- 
- 
- <select id="queryOrderRoom" parameterType="java.util.List" resultType="java.util.Map">
-  	SELECT
-		  pr.id,
-		  pr.orderReference,
-		  pr.name,
-		  pr.cancelAmount,
-		  pr.cancelPolicies,
-		  pr.boardName,
-		  pr.netPrice,
-		  DATE_FORMAT(pr.created_at,'%Y-%m-%d %h:%i:%s') createdAt,
-		  pr.comments,
-		  r.title roomType,
-		  r.title_zh roomType_zh
-	FROM porder_room pr
-	LEFT JOIN room r ON pr.roomId = r.id
-    WHERE pr.orderReference IN  
-    <foreach item="item" collection="list" separator="," open="(" close=")" index="">    
-         #{item.orderReference, jdbcType=VARCHAR}    
-    </foreach>
- </select>
- 
- <select id="queryOrderRoomPerson" parameterType="java.util.List" resultType="java.util.Map">
-		 SELECT
-		  id,
-		  orderReference,
-		  type,
-		  age,
-		  roomIndex,
-		  firstName,
-		  lastName
-		FROM porder_pax
-		WHERE roomIndex IN
-	    <foreach item="item" collection="list" separator="," open="(" close=")" index="">    
-	         #{item.id, jdbcType=INTEGER}    
-	    </foreach>
-	    and orderReference IN 
-		<foreach item="item" collection="list" separator="," open="(" close=")" index="">    
-	         #{item.orderReference, jdbcType=VARCHAR}  
-	    </foreach>
- </select>
- 
-  <select id="queryRejectedOrder" parameterType="java.util.List" resultType="java.util.Map">
-		SELECT  eb_user.user_name username, DATE_FORMAT(rejection_time,'%Y-%m-%d %h:%i:%s') rejectionTime, order_id orderId, reason
-		FROM eb_order_rejected
-		inner join eb_user on eb_order_rejected.user_id = eb_user.user_id
-		WHERE order_id IN
-	    <foreach item="item" collection="list" separator="," open="(" close=")" index="">    
-	         #{item.id, jdbcType=INTEGER}    
-	    </foreach>
-  </select>
- 
- 
- <update id="confirmOrder" parameterType="map" >
+    <sql id="orderQueryInfo">
+        SELECT
+        porder.id , porder.partnerId, porder.provider, porder.orderReference, porder.ip_address ipAddress,
+        porder.orderPReference, porder.cancellationReference,
+        porder.hotelId, hotelName, hotelName_zh, bookerFirstName, bookerLastName, bookerEmail, bookerPhone,
+        porder.checkinDate, porder.checkoutDate, porder.totalPrice, porder.totalOriginalNetPrice, porder.status,
+        porder.currencyCode, porder.code, CONCAT("/voucher/",porder.CODE) urlCode,
+        DATE_FORMAT(porder.created_at,'%Y-%m-%d %h:%i:%s') createdAt,
+        DATE_FORMAT(porder.updated_at,'%Y-%m-%d %h:%i:%s') updatedAt,
+        payment_type paymentType, payment_status paymentStatus, remark, source, isChecked, isPayed,
+        isBanked, day_number dayNumber, room_number roomNumber, special_request specialRequest,
+        finance_remark financeRemark, channel_remark channelRemark,user_email userEmail,sales_no salesNo, isConfirm_eb
+        isConfirmEB,
+        CONCAT('http://hotels.usitrip.com/hotel/',porder.hotelId,'.html') 'hotelUrl',
+        CONCAT('https://s3-us-west-1.amazonaws.com/usitrip/Hotel_Image/',hotel.thumbnail) 'hotelImgUrl',
+        (select name from porder_room where porder.orderReference = porder_room.orderReference limit 1) roomType,
+        (select comments from porder_room where porder.orderReference = porder_room.orderReference limit 1) comments,
+        (select SUBSTRING(search_info, INSTR(search_info,'"adults":"') + 10, 1 ) from porder_tem where
+        porder.orderReference = porder_tem.orderReference limit 1) adultsNum,
+        (select SUBSTRING(search_info, INSTR(search_info,'"children":') + 11, 1 ) from porder_tem where
+        porder.orderReference = porder_tem.orderReference limit 1) childrenNum
+        FROM porder
+        INNER JOIN hotel on porder.hotelId = hotel.hotelId
+        <include refid="orderWhereInfo"></include>
+    </sql>
+
+    <sql id="orderWhereInfo">
+        WHERE porder.provider = 'EBOOKING'
+        <if test="creationStartTime != null and creationStartTime != ''">and porder.created_at >= #{creationStartTime}
+        </if>
+        <if test="creationEndTime != null and creationEndTime != ''">
+            <![CDATA[ and  porder.created_at  <= #{creationEndTime} ]]> </if>
+        <if test="checkinStartDate != null and checkinStartDate != ''">and porder.checkinDate >=
+            DATE_FORMAT(#{checkinStartDate},'%Y-%m-%d')
+        </if>
+        <if test="checkinEndDate != null and checkinEndDate != ''">
+            <![CDATA[ and  porder.checkinDate  <= DATE_FORMAT(#{checkinEndDate},'%Y-%m-%d') ]]> </if>
+        <if test="checkoutStartDate != null and checkoutStartDate != ''">and porder.checkoutDate >=
+            DATE_FORMAT(#{checkoutStartDate},'%Y-%m-%d')
+        </if>
+        <if test="checkoutEndDate != null and checkoutEndDate != ''">
+            <![CDATA[ and  porder.checkoutDate  <=  DATE_FORMAT(#{checkoutEndDate},'%Y-%m-%d') ]]> </if>
+        <if test="bookerName != null and bookerName != ''">and ( porder.bookerFirstName like CONCAT('%', #{bookerName},
+            '%') or porder.bookerLastName like CONCAT('%', #{bookerName}, '%') )
+        </if>
+        <if test="bookerEmail != null and bookerEmail != ''">and porder.bookerEmail = #{bookerEmail}</if>
+        <if test="bookerPhone != null and bookerPhone != ''">and porder.bookerPhone = #{bookerPhone}</if>
+        <if test="status != null and status != ''">and porder.status = #{status}</if>
+        <if test="isConfirmEB != null and isConfirmEB != ''">and porder.isConfirm_eb = #{isConfirmEB}</if>
+        <if test="dayNumber != null and dayNumber != ''">and porder.day_number = #{dayNumber}</if>
+        <if test="roomNumber != null and roomNumber != ''">and porder.room_number = #{roomNumber}</if>
+        <if test="hotelName != null and hotelName != '' ">and ( porder.hotelName like CONCAT('%', #{hotelName}, '%') or
+            porder.hotelName_zh like CONCAT('%', #{hotelName}, '%') )
+        </if>
+        <if test="orderReference != null and orderReference != ''">and porder.orderReference = #{orderReference}</if>
+        <if test="id != null and id != ''">and porder.id = #{id}</if>
+
+        <choose>
+
+            <when test="flag == 'queryOrder'">
+                <if test="currencyCode != null and currencyCode != ''">and porder.currencyCode = #{currencyCode}</if>
+                <if test="paymentType != null and paymentType != ''">and porder.payment_type = #{paymentType}</if>
+                <if test="paymentStatus != null and paymentStatus != ''">and porder.payment_status = #{paymentStatus}
+                </if>
+                <if test="source != null and source != ''">and porder.source = #{source}</if>
+                <if test="userEmail != null and userEmail != ''">and porder.user_email = #{userEmail}</if>
+                <if test="salesNo != null and salesNo != ''">and porder.sales_no = #{salesNo}</if>
+                <if test="orderPReference != null and orderPReference != ''">and porder.orderPReference =
+                    #{orderPReference}
+                </if>
+            </when>
+
+            <when test="flag == 'queryOrderByUserId'">
+                and porder.hotelId in (select hotelId from eb_hotel_user where user_id = #{userId})
+            </when>
+
+            <when test="flag == 'queryOrderByHotelId'">
+                and porder.hotelId = #{hotelId}
+            </when>
+
+            <when test="flag == 'queryOrderByID'">
+                and porder.id = #{id}
+            </when>
+
+            <when test="flag == 'queryOrderByReference'">
+                and porder.orderReference = #{orderReference}
+            </when>
+
+            <when test="flag == 'queryOrderByUserEmail'">
+                and porder.user_email = #{userEmail}
+            </when>
+        </choose>
+
+    </sql>
+
+    <select id="queryOrder" parameterType="map" resultType="java.util.Map">
+        <include refid="orderQueryInfo"></include>
+        <choose>
+            <when test="sort != null and sort != ''">order by ${sort}</when>
+            <otherwise>order by createdAt desc</otherwise>
+        </choose>
+    </select>
+
+
+    <select id="queryOrderRoom" parameterType="java.util.List" resultType="java.util.Map">
+        SELECT
+        pr.id,
+        pr.orderReference,
+        pr.name,
+        pr.cancelAmount,
+        pr.cancelPolicies,
+        pr.boardName,
+        pr.netPrice,
+        DATE_FORMAT(pr.created_at,'%Y-%m-%d %h:%i:%s') createdAt,
+        pr.comments,
+        r.title roomType,
+        r.title_zh roomType_zh
+        FROM porder_room pr
+        LEFT JOIN room r ON pr.roomId = r.id
+        WHERE pr.orderReference IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.orderReference, jdbcType=VARCHAR}
+        </foreach>
+    </select>
+
+    <select id="queryOrderRoomPerson" parameterType="java.util.List" resultType="java.util.Map">
+        SELECT
+        id,
+        orderReference,
+        type,
+        age,
+        roomIndex,
+        firstName,
+        lastName
+        FROM porder_pax
+        WHERE roomIndex IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.id, jdbcType=INTEGER}
+        </foreach>
+        and orderReference IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.orderReference, jdbcType=VARCHAR}
+        </foreach>
+    </select>
+
+    <select id="queryRejectedOrder" parameterType="java.util.List" resultType="java.util.Map">
+        SELECT eb_user.user_name username, DATE_FORMAT(rejection_time,'%Y-%m-%d %h:%i:%s') rejectionTime, order_id
+        orderId, reason
+        FROM eb_order_rejected
+        inner join eb_user on eb_order_rejected.user_id = eb_user.user_id
+        WHERE order_id IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.id, jdbcType=INTEGER}
+        </foreach>
+    </select>
+
+
+    <update id="confirmOrder" parameterType="map">
  		UPDATE porder SET isConfirm_eb = 1 WHERE id = #{orderId}
- </update>
- 
- <update id="confirmOrderVoucherNum" parameterType="map" >
+    </update>
+
+    <update id="confirmOrderVoucherNum" parameterType="map">
  		UPDATE porder SET orderPReference = #{vcoucherNum}, isConfirm_eb = 1  WHERE id = #{orderId}
- </update>
- 
- <update id="rejectOrder" parameterType="map" >
+    </update>
+
+    <update id="rejectOrder" parameterType="map">
  		INSERT INTO eb_order_rejected( user_id, rejection_time, order_id, reason) 
  		VALUES (#{userId}, now(), #{orderId}, #{reason});
  		
  		UPDATE porder SET status = 'REJECTED',isConfirm_eb = 1 WHERE id = #{orderId};
- </update>
- 
- 
+    </update>
 </mapper>

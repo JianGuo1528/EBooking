@@ -13,7 +13,15 @@ public class Country {
   private Date updatedAt;
   private long flag;
   private String continents;
+  private String phoneCode;
 
+  public String getPhoneCode() {
+    return phoneCode;
+  }
+
+  public void setPhoneCode(String phoneCode) {
+    this.phoneCode = phoneCode;
+  }
 
   public long getCountryId() {
     return countryId;

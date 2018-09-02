@@ -86,7 +86,12 @@
             <result column="countryCode" jdbcType="VARCHAR" property="countryCode"/>
             <result column="countryName" jdbcType="VARCHAR" property="countryName"/>
             <result column="countryName_zh" jdbcType="VARCHAR" property="countryNameZh"/>
+            <result column="phoneCode" jdbcType="VARCHAR" property="phoneCode"/>
         </association>
+
+        <collection property="plan" ofType="com.ustrip.entity.Plan">
+            <id column="plan_id" jdbcType="INTEGER" property="planId"/>
+        </collection>
     </resultMap>
 
     <select id="selectPartnerByEmail" parameterType="map" resultMap="PartnerResultMap">
@@ -148,7 +153,8 @@
         <if test='minimum_length_of_stay != null'>
             minimum_length_of_stay = #{minimum_length_of_stay},
         </if>
-        plan_id = #{plan_id}
+        plan_id = #{plan_id},
+        push_status = 0
         where plan_id = #{plan_id} and sale_date in
         <foreach collection="dateList" item="item" index="index" open="(" separator="," close=")">
             #{item}
@@ -167,17 +173,16 @@
     </select>
 
     <select id="queryPlan" parameterType="map" resultType="java.util.Map">
-        select
-            h.hotelId,
-            h.name,
-            p.*,
-            u.name as user_chain
-        from hotel h, eb_plan p, eb_hotel_user hu, eb_user u
+        select h.hotelId, h.name, p.*, u.name as user_chain
+        from hotel h,
+             eb_plan p,
+             eb_hotel_user hu,
+             eb_user u
         where p.plan_id = #{plan_id,jdbcType=INTEGER}
-              and h.hotelId = hu.hotelId
-              and p.hotelId = hu.hotelId
-              and hu.user_id = u.user_id
-              and p.status = 1
+          and h.hotelId = hu.hotelId
+          and p.hotelId = hu.hotelId
+          and hu.user_id = u.user_id
+          and p.status = 1
     </select>
 
     <insert id="insertPlan" parameterType="map">
@@ -222,13 +227,16 @@
     <select id="queryRoomTypes" parameterType="java.util.List" resultType="java.util.Map">
 
 
-        select hotelId, id room_type_id , type_name room_type_name, type_name_zh room_type_name_zh
+        select hotelId, id room_type_id , type_name room_type_name, type_name_zh room_type_name_zh,'' remark,'' as
+        bed_type_name,'' bed_type_name_zh,-1 bed_type_id,1 status
         from eb_dict where type = 'room' and hotelId = 0
         union all
-        select eb_hotel_room_type.hotelId, room_type_id ,eb_dict.type_name,eb_dict.type_name_zh
-        from eb_hotel_room_type
-        inner join eb_dict on eb_hotel_room_type.room_type_id = eb_dict.id
-        where eb_hotel_room_type.status=1 and eb_hotel_room_type.hotelId IN
+        select eb_hotel_room_type.hotelId, room_type_id
+        ,eb_dict.type_name,eb_dict.type_name_zh,eb_hotel_room_type.remark,d2.type_name as bed_type_name,d2.type_name_zh
+        as bed_type_name_zh,eb_hotel_room_type.bed_type_id,status
+        from eb_hotel_room_type, eb_dict,eb_dict d2 where eb_hotel_room_type.room_type_id = eb_dict.id
+        and eb_hotel_room_type.bed_type_id=d2.id
+        and eb_hotel_room_type.status=1 and eb_hotel_room_type.hotelId IN
         <foreach item="item" collection="list" separator="," open="(" close=")" index="">
             #{item.hotelId, jdbcType=INTEGER}
         </foreach>
@@ -245,7 +253,8 @@
 
 
     <select id="queryPlans" parameterType="java.util.List" resultType="java.util.Map">
-        select p.*,d2.type_name as bed_type_name,d3.type_name as breakfast_type_name
+        select p.*,d2.type_name as bed_type_name,d2.type_name_zh as bed_type_name_zh,d3.type_name as
+        breakfast_type_name,d3.type_name_zh as breakfast_type_name_zh
         from eb_plan p,eb_dict d2,eb_dict d3
         where p.bed_type_id=d2.id
         and p.breakfast_type_id=d3.id
@@ -263,13 +272,12 @@
     </update>
 
     <select id="queryBreakfastByPlanId" parameterType="int" resultType="java.util.Map">
-        select
-            b.type_name,
-            b.type_name_zh
-        from eb_plan a, eb_dict b
+        select b.type_name, b.type_name_zh
+        from eb_plan a,
+             eb_dict b
         where a.plan_id = #{plan_id}
-              and a.breakfast_type_id = b.id
-              and b.type = 'board'
+          and a.breakfast_type_id = b.id
+          and b.type = 'board'
     </select>
 
     <select id="queryHotelIdByPlanId" parameterType="int" resultType="int">
@@ -317,20 +325,18 @@
 
     <select id="selectHotelByHotelId" parameterType="int" resultMap="HotelResultMap">
         select *
-        from
-            hotel,
-            country
+        from hotel,
+             country
         where hotelId = #{hotelId}
-        and hotel.countryId = country.countryId
+          and hotel.countryId = country.countryId
     </select>
 
     <select id="selectHotelByProvide" parameterType="string" resultMap="HotelResultMap">
         select *
-        from
-            hotel,
-            country
+        from hotel,
+             country
         where provider = #{provider}
-              and hotel.countryId = country.countryId
+          and hotel.countryId = country.countryId
     </select>
     <select id="selectPlansByHotelId" parameterType="map" resultType="map">
         select a.hotelId,a.plan_id,a.room_type_id,a.breakfast_type_id,a.bed_type_id,
@@ -352,12 +358,13 @@
         #{room_number}
         and sale_date &gt;= #{check_in}
         and sale_date &lt; #{check_out}
+        and ahead_of_checkin &lt;= #{ahead_of_checkin}
         <if test="day_number != null">
             and minimum_length_of_stay &lt;= #{day_number}
         </if>
     </select>
     <select id="getHotelNameFromHotel" parameterType="map" resultType="map">
-        SELECT m.hotelId,m.name,m.name_zh,m.productId,m.discount,m.priceRatioToC
+        SELECT m.hotelId,m.name,m.name_zh,m.productId,m.discount,m.priceRatio as priceRatio
         FROM hotel as m
         WHERE m.hotelId IN
         <foreach collection="hotelIds" index="index" item="hotelIds" open="(" separator="," close=")">#{hotelIds}
@@ -366,16 +373,67 @@
 
     <select id="selectPlanByPlanId" parameterType="int" resultType="map">
         select *
-        from
-            eb_plan
+        from eb_plan
         where plan_id = #{planId}
-              and status = 1
+          and status = 1
     </select>
 
     <select id="selectTypeById" parameterType="int" resultType="map">
         select *
-        from
-            eb_dict
+        from eb_dict
         where id = #{id}
+    </select>
+    <select id="selectPorderByOrderId" parameterType="string" resultType="java.util.Map">
+        SELECT *
+        FROM porder
+        WHERE id = #{orderId}
+        LIMIT 1
+    </select>
+
+    <select id="selectHotelsWithPlansByHotelIds" resultMap="HotelResultMap">
+        SELECT
+            hotel.hotelId,
+            name,
+            name_zh,
+            address,
+            desId,
+            currency,
+            priceRatio,
+            plan_id
+        FROM
+            hotel,
+            eb_plan
+        WHERE hotel.hotelId IN
+        <foreach collection="hotelIds" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        AND hotel.hotelId = eb_plan.hotelId
+        <if test="ratePlanId != null">
+            AND plan_id = #{ratePlanId}
+        </if>
+        AND eb_plan.status = 1
+        AND eb_plan.max_person >= #{max_person}
+    </select>
+ 
+    <select id="queryRoomTypeList" resultType="java.util.Map" >
+		SELECT 
+			p.room_type_id roomTypeCode, 
+			max((case when d.type_name_zh is null or d.type_name_zh = '' then d.type_name else d.type_name_zh end))  roomTypeName, 
+			max(d.type_name) roomTypeEnglishName,
+			min(p.max_person) maxRoomOccupancy,
+			GROUP_CONCAT(p.plan_id) planIds
+		from eb_plan p
+		inner join eb_dict d on p.room_type_id = d.id
+		where p.hotelId = #{hotelId} and p.status = 1
+        <if test="roomTypeId != null">  and p.room_type_id = #{roomTypeId}  </if>
+		GROUP BY p.room_type_id
+    </select>
+    
+    
+    <select id="queryRateName" parameterType="int" resultType="java.util.Map" >
+    	select d.type_name  RateEnglishName ,d.type_name_zh RateName, p.max_person MaxOccupancy
+		from eb_plan p
+		inner join eb_dict d on p.breakfast_type_id = d.id
+		where p.plan_id = #{planId}
     </select>
 </mapper>

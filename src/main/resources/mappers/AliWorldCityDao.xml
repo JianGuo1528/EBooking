@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ustrip.dao.AliWorldCityDao">
+    <select id="selectWorldCityByCountryName" parameterType="string" resultType="java.util.Map">
+        select
+          *
+        from
+          ali_world_city
+        where country_name_zh = #{countryNameZh}
+        group by country_code
+    </select>
+
+    <select id="selectAliCityByCondition" resultType="java.util.Map">
+        select
+        *
+        from
+          eb_ali_city
+        where latitude = #{latitude}
+        and longitude = #{longitude}
+        <if test="countryCode != null">
+            ali_country_code = #{countryCode}
+        </if>
+    </select>
+
+    <insert id="insertData2AliCity" parameterType="java.util.Map">
+        insert into eb_ali_city (`ali_country_code`, `ali_city_code`, `latitude`, `longitude`, `hotelId`, `desId`)
+        values (#{countryCode}, #{cityCode}, #{latitude}, #{longitude}, #{hotelID}, #{desId})
+    </insert>
+
+    <select id="selectHotelByCityCode" parameterType="string" resultType="string">
+        select
+          hotelId
+        from
+          eb_ali_city
+        where ali_city_code = #{cityCode}
+    </select>
+</mapper>

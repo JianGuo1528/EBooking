@@ -4,6 +4,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
 
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class BookInfo implements Serializable {
@@ -82,6 +83,16 @@ public class BookInfo implements Serializable {
     private Integer planId;
     private List<?> comments;
     private List<AvailabilityBean> availability;
+
+    public String getPaxNames() {
+        return paxNames;
+    }
+
+    public void setPaxNames(String paxNames) {
+        this.paxNames = paxNames;
+    }
+
+    private String paxNames;
 
     public Integer getRoomTypeCode() {
         return roomTypeCode;
@@ -444,5 +455,9 @@ public class BookInfo implements Serializable {
                 this.roomNumber = roomNumber;
             }
         }
+    }
+
+    public int getKey() {
+        return Objects.hash(getRoomNumber(), getCheckInStr(), getRatePlanCode(), getPaxes(), getCheckOutStr(), getPlanId(), getPaxNames());
     }
 }
