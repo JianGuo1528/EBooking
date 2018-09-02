@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ustrip.dao.PorderDao">
+
+    <resultMap id="PorderResultMap" type="com.ustrip.entity.Porder">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="partnerId" jdbcType="INTEGER" property="partnerId"/>
+        <result column="provider" jdbcType="VARCHAR" property="provider"/>
+        <result column="orderReference" jdbcType="VARCHAR" property="orderReference"/>
+        <result column="cancellationReference" jdbcType="VARCHAR" property="cancellationReference"/>
+        <result column="hotelId" jdbcType="INTEGER" property="hotelId"/>
+        <result column="bookerFitstName" jdbcType="VARCHAR" property="bookerFitstName"/>
+        <result column="bookerLastName" jdbcType="VARCHAR" property="bookerLastName"/>
+        <result column="checkinDate" jdbcType="DATE" property="checkinDate"/>
+        <result column="checkoutDate" jdbcType="DATE" property="checkoutDate"/>
+        <result column="totalNetPrice" jdbcType="DOUBLE" property="totalNetPrice"/>
+        <result column="totalPrice" jdbcType="DOUBLE" property="totalPrice"/>
+        <result column="status" jdbcType="VARCHAR" property="status"/>
+        <result column="currencyCode" jdbcType="VARCHAR" property="currencyCode"/>
+        <result column="creationTime" jdbcType="TIMESTAMP" property="creationTime"/>
+        <result column="cancellable" jdbcType="TINYINT" property="cancellable"/>
+    </resultMap>
+
+    <select id="selectPorders" parameterType="map" resultMap="PorderResultMap">
+      select * from porder
+    </select>
+
+    <select id="insertPorder" parameterType="map">
+	insert into porder (day_number,room_number,created_at,partnerId,provider,orderReference,orderPReference,cancellationReference,hotelId,hotelName,hotelName_zh,productId,bookerFirstName,bookerLastName,bookerEmail,bookerPhone,checkinDate,checkoutDate,totalPrice,totalNetPrice,totalOriginalNetPrice,status,currencyCode,creationTime,code,vat,supplier,payment_type,payment_status) values
+     (#{day_number},#{room_number},DATE_ADD(NOW(), INTERVAL -3 HOUR),#{partnerId}, #{provider}, #{orderReference}, #{orderPReference}, "",#{hotelId}, #{hotelName}, #{hotelName_zh},0, #{bookerFirstName}, #{bookerLastName}, #{bookerEmail}, #{bookerPhone}, #{checkinDate}, #{checkoutDate}, #{totalPrice}, #{totalNetPrice}, #{totalOriginalNetPrice}, #{status}, #{currencyCode}, #{creationTime}, #{code}, #{vat}, #{supplier}, #{payment_type}, #{payment_status})
+    </select>
+
+    <update id="updatePorderStatusRefByOrderRefIdPartnerId" parameterType="map">  
+        update porder set status = #{status},cancellationReference=#{cancellationReference} where partnerId = #{partnerId} AND orderReference=#{orderReference}  
+    </update>
+
+    <update id="updateOrderIP" parameterType="map">  
+        update porder set ip_address = #{ip} where orderReference=#{orderReference}  
+    </update>
+
+    <update id="updateOrderCReference" parameterType="map">  
+        update porder set orderCReference = #{orderCReference} where orderReference=#{orderReference}  
+    </update>
+
+    <update id="updatePlanAvailability" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index"
+                 separator=";">
+            update eb_plan_detail set
+            <if test='item.conType == 1'>
+                contract_available_amount = contract_available_amount-#{item.roomNumber, jdbcType=INTEGER},
+                contract_sold_amount = contract_sold_amount+#{item.roomNumber, jdbcType=INTEGER}
+            </if>
+            <if test='item.conType == 2'>
+                supplement_available_amount = supplement_available_amount-#{item.roomNumber, jdbcType=INTEGER},
+                supplement_sold_amount = supplement_sold_amount+#{item.roomNumber, jdbcType=INTEGER}
+            </if>
+            where plan_id = #{item.plan_id, jdbcType=VARCHAR} and sale_date = #{item.sale_date, jdbcType=VARCHAR}
+
+        </foreach>
+    </update>
+
+    <update id="updatePlanAvailabilityCancel" parameterType="java.util.List">
+        <foreach collection="list" item="item" index="index"
+                 separator=";">
+            update eb_plan_detail set
+            <if test='item.conType == 1'>
+                contract_available_amount = contract_available_amount+#{item.roomNumber, jdbcType=INTEGER},
+                contract_sold_amount = contract_sold_amount-#{item.roomNumber, jdbcType=INTEGER}
+            </if>
+            <if test='item.conType == 2'>
+                supplement_available_amount = supplement_available_amount+#{item.roomNumber, jdbcType=INTEGER},
+                supplement_sold_amount = supplement_sold_amount-#{item.roomNumber, jdbcType=INTEGER}
+            </if>
+            where plan_id = #{item.plan_id, jdbcType=VARCHAR} and sale_date = #{item.sale_date, jdbcType=VARCHAR}
+
+        </foreach>
+    </update>
+
+    <select id="selectOrderById" parameterType="int" resultMap="PorderResultMap">
+        select
+          *
+        from porder
+        where id = #{id}
+    </select>
+
+</mapper>

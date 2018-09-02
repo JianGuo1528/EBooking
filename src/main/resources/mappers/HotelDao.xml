@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ustrip.dao.HotelDao">
+
+    <resultMap id="PartnerResultMap" type="com.ustrip.entity.Partner">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="active" jdbcType="TINYINT" property="active"/>
+        <result column="admin" jdbcType="TINYINT" property="admin"/>
+        <result column="priceRatio" jdbcType="DOUBLE" property="priceRatio"/>
+        <result column="balance" jdbcType="DOUBLE" property="balance"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="providers" jdbcType="VARCHAR" property="providers"/>
+        <result column="remember_token" jdbcType="VARCHAR" property="remember_token"/>
+        <result column="mobile_phone" jdbcType="VARCHAR" property="mobile_phone"/>
+        <result column="contact_person" jdbcType="VARCHAR" property="contact_person"/>
+        <result column="company_phone" jdbcType="VARCHAR" property="company_phone"/>
+        <result column="company_address" jdbcType="VARCHAR" property="company_address"/>
+        <result column="company_name" jdbcType="VARCHAR" property="company_name"/>
+        <result column="avatar" jdbcType="VARCHAR" property="avatar"/>
+        <result column="api_password" jdbcType="VARCHAR" property="api_password"/>
+        <result column="Country_Code" jdbcType="VARCHAR" property="Country_Code"/>
+        <result column="channel" jdbcType="VARCHAR" property="channel"/>
+        <result column="created_at" jdbcType="DATE" property="created_at"/>
+        <result column="updated_at" jdbcType="DATE" property="updated_at"/>
+    </resultMap>
+
+    <resultMap id="PlanDetailsResultMap" type="com.ustrip.entity.PlanDetails">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="hotelId" jdbcType="INTEGER" property="hotelId"/>
+        <result column="plan_id" jdbcType="INTEGER" property="plan_id"/>
+        <result column="contract_price" jdbcType="DOUBLE" property="contract_price"/>
+        <result column="supplement_price" jdbcType="DOUBLE" property="supplement_price"/>
+        <result column="sale_date" jdbcType="DATE" property="sale_date"/>
+        <result column="day_of_week" jdbcType="INTEGER" property="day_of_week"/>
+        <result column="contract_available_amount" jdbcType="INTEGER" property="contract_available_amount"/>
+        <result column="supplement_available_amount" jdbcType="INTEGER" property="supplement_available_amount"/>
+        <result column="contract_sold_amount" jdbcType="VARCHAR" property="contract_sold_amount"/>
+        <result column="supplement_sold_amount" jdbcType="VARCHAR" property="supplement_sold_amount"/>
+        <result column="updated_at" jdbcType="DATE" property="updated_at"/>
+        <result column="cancellation_status" jdbcType="INTEGER" property="cancellation_status"/>
+        <result column="cancellation_day" jdbcType="INTEGER" property="cancellation_day"/>
+        <result column="ahead_of_checkin" jdbcType="INTEGER" property="ahead_of_checkin"/>
+        <result column="minimum_length_of_stay" jdbcType="INTEGER" property="minimum_length_of_stay"/>
+    </resultMap>
+
+    <resultMap id="HotelResultMap" type="com.ustrip.entity.Hotel">
+        <id column="hotelId" jdbcType="INTEGER" property="hotelId"/>
+        <result column="productId" jdbcType="INTEGER" property="productId"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="name_zh" jdbcType="VARCHAR" property="name_zh"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+        <result column="description_zh" jdbcType="VARCHAR" property="description_zh"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="zipcode" jdbcType="VARCHAR" property="zipcode"/>
+        <result column="desPid" jdbcType="VARCHAR" property="desPid"/>
+        <result column="desId" jdbcType="INTEGER" property="desId"/>
+        <result column="hzone" jdbcType="VARCHAR" property="hzone"/>
+        <result column="zoneCode" jdbcType="INTEGER" property="zoneCode"/>
+        <result column="display" jdbcType="INTEGER" property="display"/>
+        <result column="countryId" jdbcType="INTEGER" property="countryId"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="rating" jdbcType="INTEGER" property="rating"/>
+        <result column="category" jdbcType="VARCHAR" property="category"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="chain" jdbcType="VARCHAR" property="chain"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="fax" jdbcType="VARCHAR" property="fax"/>
+        <result column="minPrice" jdbcType="DOUBLE" property="minPrice"/>
+        <result column="maxPrice" jdbcType="VARCHAR" property="maxPrice"/>
+        <result column="currency" jdbcType="VARCHAR" property="currency"/>
+        <result column="thumbnail" jdbcType="VARCHAR" property="thumbnail"/>
+        <result column="abstractImg" jdbcType="VARCHAR" property="abstractImg"/>
+        <result column="provider" jdbcType="VARCHAR" property="provider"/>
+        <result column="created_at" jdbcType="DATE" property="created_at"/>
+        <result column="updated_at" jdbcType="DATE" property="updated_at"/>
+        <result column="priceRatio" jdbcType="DOUBLE" property="priceRatio"/>
+        <result column="priceRatioToC" jdbcType="DOUBLE" property="priceRationToC"/>
+
+        <association property="country" javaType="com.ustrip.entity.Country">
+            <result column="countryCode" jdbcType="VARCHAR" property="countryCode"/>
+            <result column="countryName" jdbcType="VARCHAR" property="countryName"/>
+            <result column="countryName_zh" jdbcType="VARCHAR" property="countryNameZh"/>
+        </association>
+    </resultMap>
+
+    <select id="selectPartnerByEmail" parameterType="map" resultMap="PartnerResultMap">
+        SELECT *
+        FROM partner AS p
+
+        WHERE p.email = #{email}
+    </select>
+
+    <select id="selectLastDateByPlanId" parameterType="map" resultType="Date">
+        SELECT max(a.sale_date)
+        FROM eb_plan_detail AS a
+        WHERE a.plan_id = #{plan_id}
+    </select>
+
+    <select id="queryPlanDetailsByDate" parameterType="map" resultMap="PlanDetailsResultMap">
+        SELECT *
+        FROM eb_plan_detail AS a
+
+        WHERE a.plan_id= #{plan_id} and
+        a.sale_date in
+        <foreach collection="dateList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
+    <insert id="insertPlanDetails" parameterType="java.util.List">
+        insert into eb_plan_detail (hotelId,sale_date,day_of_week,plan_id,updated_at)
+        values
+        <foreach collection="planDetailsInsertList" item="item" index="index" separator=",">
+            (#{item.hotelId,jdbcType=INTEGER},#{item.sale_date,jdbcType=DATE},#{item.day_of_week,jdbcType=INTEGER},#{item.plan_id,jdbcType=INTEGER},
+            #{item.updated_at,jdbcType=DATE})
+        </foreach>
+    </insert>
+
+    <update id="updatePlanDetailsByDate" parameterType="map">
+        update eb_plan_detail set
+        <if test='contract_price != null'>
+            contract_price= #{contract_price},
+        </if>
+        <if test='contract_available_amount != null'>
+            contract_available_amount= #{contract_available_amount},
+        </if>
+        <if test='supplement_price != null'>
+            supplement_price = #{supplement_price},
+        </if>
+        <if test='supplement_available_amount != null'>
+            supplement_available_amount = #{supplement_available_amount},
+        </if>
+        <if test='cancellation_status != null'>
+            cancellation_status = #{cancellation_status},
+        </if>
+        <if test='cancellation_day != null'>
+            cancellation_day = #{cancellation_day},
+        </if>
+        <if test='ahead_of_checkin != null'>
+            ahead_of_checkin = #{ahead_of_checkin},
+        </if>
+        <if test='minimum_length_of_stay != null'>
+            minimum_length_of_stay = #{minimum_length_of_stay},
+        </if>
+        plan_id = #{plan_id}
+        where plan_id = #{plan_id} and sale_date in
+        <foreach collection="dateList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+
+    </update>
+
+    <select id="queryHotelRooms" parameterType="map" resultType="java.util.Map">
+        select h.*,u.name as user_chain
+        from hotel h,eb_hotel_user hu,eb_user u
+        where h.hotelId=hu.hotelId
+        and hu.user_id=u.user_id
+        <if test="roleId != 9">
+            and hu.user_id=#{userId}
+        </if>
+    </select>
+
+    <select id="queryPlan" parameterType="map" resultType="java.util.Map">
+        select
+            h.hotelId,
+            h.name,
+            p.*,
+            u.name as user_chain
+        from hotel h, eb_plan p, eb_hotel_user hu, eb_user u
+        where p.plan_id = #{plan_id,jdbcType=INTEGER}
+              and h.hotelId = hu.hotelId
+              and p.hotelId = hu.hotelId
+              and hu.user_id = u.user_id
+              and p.status = 1
+    </select>
+
+    <insert id="insertPlan" parameterType="map">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+
+        insert into eb_plan (plan_name,hotelId,room_type_id,bed_type_id,breakfast_type_id,max_person,status)
+        values
+        (#{plan_name,jdbcType=VARCHAR},#{hotelId,jdbcType=INTEGER},#{room_type_id,jdbcType=INTEGER},#{bed_type_id,jdbcType=INTEGER}
+        ,#{breakfast_type_id,jdbcType=INTEGER},#{max_person,jdbcType=INTEGER},#{status,jdbcType=INTEGER})
+    </insert>
+
+    <update id="updatePlan" parameterType="map">
+        update eb_plan set
+        <if test='plan_name != null'>
+            plan_name = #{plan_name},
+        </if>
+        <if test='hotelId != null'>
+            hotelId = #{hotelId},
+        </if>
+        <if test='room_type_id != null'>
+            room_type_id = #{room_type_id},
+        </if>
+        <if test='bed_type_id != null'>
+            bed_type_id = #{bed_type_id},
+        </if>
+        <if test='breakfast_type_id != null'>
+            breakfast_type_id = #{breakfast_type_id},
+        </if>
+        <if test='max_person != null'>
+            max_person = #{max_person},
+        </if>
+        <if test='status != null'>
+            status = #{status},
+        </if>
+        plan_id = #{plan_id}
+        where plan_id = #{plan_id}
+
+    </update>
+
+    <select id="queryRoomTypes" parameterType="java.util.List" resultType="java.util.Map">
+
+
+        select hotelId, id room_type_id , type_name room_type_name, type_name_zh room_type_name_zh
+        from eb_dict where type = 'room' and hotelId = 0
+        union all
+        select eb_hotel_room_type.hotelId, room_type_id ,eb_dict.type_name,eb_dict.type_name_zh
+        from eb_hotel_room_type
+        inner join eb_dict on eb_hotel_room_type.room_type_id = eb_dict.id
+        where eb_hotel_room_type.status=1 and eb_hotel_room_type.hotelId IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.hotelId, jdbcType=INTEGER}
+        </foreach>
+
+        <!-- select distinct p.hotelId,p.room_type_id,d.type_name as room_type_name  -->
+        <!-- from eb_hotel_room_type p,eb_dict d -->
+        <!-- where p.room_type_id=d.id -->
+        <!-- and p.status=1 -->
+        <!-- and p.hotelId IN -->
+        <!--     <foreach item="item" collection="list" separator="," open="(" close=")" index="">     -->
+        <!--          #{item.hotelId, jdbcType=INTEGER}     -->
+        <!--     </foreach> -->
+    </select>
+
+
+    <select id="queryPlans" parameterType="java.util.List" resultType="java.util.Map">
+        select p.*,d2.type_name as bed_type_name,d3.type_name as breakfast_type_name
+        from eb_plan p,eb_dict d2,eb_dict d3
+        where p.bed_type_id=d2.id
+        and p.breakfast_type_id=d3.id
+        and p.status in (0,1)
+        and p.hotelId IN
+        <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+            #{item.hotelId, jdbcType=INTEGER}
+        </foreach>
+    </select>
+
+    <update id="setPlanSaleFlag" parameterType="map">
+        update eb_plan
+        set status = #{status}
+        where plan_id = #{planId}
+    </update>
+
+    <select id="queryBreakfastByPlanId" parameterType="int" resultType="java.util.Map">
+        select
+            b.type_name,
+            b.type_name_zh
+        from eb_plan a, eb_dict b
+        where a.plan_id = #{plan_id}
+              and a.breakfast_type_id = b.id
+              and b.type = 'board'
+    </select>
+
+    <select id="queryHotelIdByPlanId" parameterType="int" resultType="int">
+        select a.hotelId
+        from eb_plan a
+        where a.plan_id = #{plan_id}
+    </select>
+
+    <select id="countPlanDetailsDiff" parameterType="map" resultType="int">
+        select count(*) from (
+        select distinct
+        <if test='contract_price != null'>
+            contract_price,
+        </if>
+        <if test='contract_available_amount != null'>
+            contract_available_amount,
+        </if>
+        <if test='supplement_price != null'>
+            supplement_price,
+        </if>
+        <if test='supplement_available_amount != null'>
+            supplement_available_amount,
+        </if>
+        <if test='cancellation_status != null'>
+            cancellation_status,
+        </if>
+        <if test='cancellation_day != null'>
+            cancellation_day,
+        </if>
+        <if test='ahead_of_checkin != null'>
+            ahead_of_checkin,
+        </if>
+        <if test='minimum_length_of_stay != null'>
+            minimum_length_of_stay,
+        </if>
+        a.plan_id
+        from eb_plan_detail a
+        where a.plan_id = #{plan_id} and
+        a.sale_date in
+        <foreach collection="dateList" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+        ) b
+    </select>
+
+    <select id="selectHotelByHotelId" parameterType="int" resultMap="HotelResultMap">
+        select *
+        from
+            hotel,
+            country
+        where hotelId = #{hotelId}
+        and hotel.countryId = country.countryId
+    </select>
+
+    <select id="selectHotelByProvide" parameterType="string" resultMap="HotelResultMap">
+        select *
+        from
+            hotel,
+            country
+        where provider = #{provider}
+              and hotel.countryId = country.countryId
+    </select>
+    <select id="selectPlansByHotelId" parameterType="map" resultType="map">
+        select a.hotelId,a.plan_id,a.room_type_id,a.breakfast_type_id,a.bed_type_id,
+        b.type_name as room_name,b.type_name_zh as room_name_zh,
+        c.type_name as bed_name,c.type_name_zh as bed_name_zh,
+        d.type_name as board_name,d.type_name_zh as board_name_zh
+        from eb_plan a left join eb_dict b on a.room_type_id = b.id and b.type='room'
+        left join eb_dict c on a.bed_type_id = c.id and c.type='bed'
+        left join eb_dict d on a.breakfast_type_id = d.id and d.type='board' where a.status =1 and a.max_person &gt;=
+        #{max_person} and a.hotelId in
+        <foreach collection="hotelIds" item="item" index="index" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+    <select id="selectPlansByDate" parameterType="map" resultType="map">
+        select
+        plan_id,sale_date,contract_price,supplement_price,sale_date,contract_available_amount,supplement_available_amount,cancellation_status,cancellation_day
+        from eb_plan_detail where plan_id = #{plan_id} and contract_available_amount+supplement_available_amount &gt;=
+        #{room_number}
+        and sale_date &gt;= #{check_in}
+        and sale_date &lt; #{check_out}
+        <if test="day_number != null">
+            and minimum_length_of_stay &lt;= #{day_number}
+        </if>
+    </select>
+    <select id="getHotelNameFromHotel" parameterType="map" resultType="map">
+        SELECT m.hotelId,m.name,m.name_zh,m.productId,m.discount,m.priceRatioToC
+        FROM hotel as m
+        WHERE m.hotelId IN
+        <foreach collection="hotelIds" index="index" item="hotelIds" open="(" separator="," close=")">#{hotelIds}
+        </foreach>
+    </select>
+
+    <select id="selectPlanByPlanId" parameterType="int" resultType="map">
+        select *
+        from
+            eb_plan
+        where plan_id = #{planId}
+              and status = 1
+    </select>
+
+    <select id="selectTypeById" parameterType="int" resultType="map">
+        select *
+        from
+            eb_dict
+        where id = #{id}
+    </select>
+</mapper>

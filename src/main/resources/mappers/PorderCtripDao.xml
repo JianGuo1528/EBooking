@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ustrip.dao.PorderCtripDao">
+    <select id="selectPorderCtripByCtripReservationNo" parameterType="string" resultType="java.util.Map">
+        select *
+        from porder_ctrip
+        where ctrip_reservation_number = #{ctripReservationNo}
+        and status = 1
+    </select>
+    
+    <insert id="insertData2PorderCtrip" parameterType="map">
+        insert into porder_ctrip(`ctrip_reservation_number`, `orderReference`, `hotel_confirmation_number`, `created_at`)
+        values(#{ctripReservationNumber}, #{orderReference}, #{hotelConfirmationNumber}, NOW())
+    </insert>
+    
+    <select id="selectPorderCtripByCtripReservationNoAllStatus" parameterType="string" resultType="java.util.Map">
+        SELECT ctrip_reservation_number, orderReference, hotel_confirmation_number,status
+        FROM porder_ctrip
+        WHERE ctrip_reservation_number = #{ctripReservationNo}  LIMIT 1
+    </select>
+    
+    <update id="updateStatusOfPorderCtrip" parameterType="map">
+    	 UPDATE porder_ctrip set status = 0, updated_at = NOW()  WHERE ctrip_reservation_number = #{ctripReservationNumber} and orderReference = #{orderReference}
+    </update>
+</mapper>
